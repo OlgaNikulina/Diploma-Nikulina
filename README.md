@@ -26,6 +26,6 @@ services:
 ### Установка и запуск
 2. Запустить Docker Toolbox
 3. выполнить команду docker-compose up    
-4. java -jar artifacts/artifacts/aqa-shop.jar 
+4. java -jar artifacts/aqa-shop.jar
 5. При повторном запуске выполнить docker-compose down,  выполнить п.3, п.4. 
 6. открыть приложение в браузере на http://localhost:8080
