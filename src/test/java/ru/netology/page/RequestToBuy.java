@@ -5,8 +5,8 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class PageWithBuyInCredit {
-    private SelenideElement buyInCredit = $("#root > div > button.button.button_view_extra.button_size_m.button_theme_alfa-on-white > span > span");
+public class RequestToBuy {
+    private SelenideElement buttonToBuy = $("#root > div > button:nth-child(3) > span > span");
     private SelenideElement cardPayment = $("Оплата по карте");
     private SelenideElement cardNumberField = $("[placeholder='0000 0000 0000 0000']");
     private SelenideElement monthField = $("[placeholder='08']");
@@ -16,7 +16,7 @@ public class PageWithBuyInCredit {
     private SelenideElement buttonContinue = $("Продолжить");
 
     public void shouldClickButtonToBuy() {
-        buyInCredit.click();
+        buttonToBuy.click();
     }
 
     public void formCardPaymentShouldBeVisible(){
@@ -24,6 +24,7 @@ public class PageWithBuyInCredit {
     }
 
     public void shouldReplenishFormToBuy() {
+        buttonToBuy.click();
         cardNumberField.setValue("");
         monthField.setValue("");
         yearField.setValue("");
@@ -31,4 +32,6 @@ public class PageWithBuyInCredit {
         cvvField.setValue("");
         buttonContinue.click();
     }
+
+
 }
