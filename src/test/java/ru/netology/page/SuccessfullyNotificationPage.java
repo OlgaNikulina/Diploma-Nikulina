@@ -10,6 +10,6 @@ public class SuccessfullyNotificationPage {
     private SelenideElement successfullyNotification = $$("div.notification__title").find(exactText("[Успешно]"));
 
     public void shouldSuccessfullyNotificationBeVisible() {
-        successfullyNotification.waitUntil(visible, 150000);
+        successfullyNotification.waitUntil(visible, 15000);
     }
 }
