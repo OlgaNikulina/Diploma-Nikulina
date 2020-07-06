@@ -9,7 +9,6 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class RequestToBuyInCredit {
     private SelenideElement buyInCredit = $$("span.button__text").find(exactText("Купить в кредит"));
-    private SelenideElement cardPayment = $$("h3[class]").find(exactText("Оплата по карте"));
     private SelenideElement cardNumberField = $("[placeholder='0000 0000 0000 0000']");
     private SelenideElement monthField = $("[placeholder='08']");
     private SelenideElement yearField = $("[placeholder='22']");
