@@ -24,9 +24,9 @@ services:
 На ПК должна быть установлена JDK, IntelliJ IDEA, Docker Toolbox, браузер
 
 ### Установка и запуск
-2. запустить Docker Toolbox
-3. выполнить команду docker-compose up  / docker-compose up --force-recreate 
-4. java -jar artifacts/aqa-shop.jar или java -jar artifacts/aqa-shop.jar -P:jdbc.url=jdbc:mysql://192.168.99.100:3306/app -P:jdbc.user=app -P:jdbc.password=pass
-5. при повторном запуске выполнить docker-compose down,  выполнить п.3, п.4. 
-6. открыть приложение в браузере на http://localhost:8080
-7. в каталоге init_db/gate-simulator открыть терминал и запустить симулятор командой npm start
+1. запустить Docker Toolbox
+2. выполнить команду docker-compose up  / docker-compose up --force-recreate 
+3. java -jar artifacts/aqa-shop.jar или java -jar artifacts/aqa-shop.jar -P:jdbc.url=jdbc:mysql://192.168.99.100:3306/app -P:jdbc.user=app -P:jdbc.password=pass
+4. при повторном запуске выполнить docker-compose down,  выполнить п.3, п.4. 
+5. открыть приложение в браузере на http://localhost:8080
+6. в каталоге init_db/gate-simulator открыть терминал и запустить симулятор командой npm start
