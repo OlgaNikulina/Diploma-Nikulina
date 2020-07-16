@@ -16,11 +16,11 @@ public class DataHelper {
     }
 
     public static CardsInfo getCardsInfoWith41() {
-        return new CardsInfo("4444 4444 4444 4441", "08", "22", "Max", "999");
+        return new CardsInfo("4444 4444 4444 4441", "08", "22", "Name", "999");
     }
 
     public static CardsInfo getCardsInfoWith42() {
-        return new CardsInfo("4444 4444 4444 4442", "08", "22", "Max", "999");
+        return new CardsInfo("4444 4444 4444 4442", "08", "22", "Name", "999");
     }
 
     public static CardsInfo getCardsInfoWithEmptyFields() {
