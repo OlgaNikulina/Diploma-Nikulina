@@ -13,6 +13,7 @@ public class ErrorNotificationPage {
     private SelenideElement yearFieldSub = $$("input.input__sub").find(Condition.exactText("Неверный формат"));
     private SelenideElement cardHolderFieldSub = $$("input.input__sub").find(Condition.exactText("Поле обязательно для заполнения"));
     private SelenideElement cvvFieldSub = $$("input.input__sub").find(Condition.exactText("Неверный формат"));
+    private SelenideElement errorNotification = $$("div.notification__title").find(exactText("[Ошибка]"));
 
     public void shouldErrorNotificationBeVisible() {
         cardNumberFieldSub.shouldBe(visible);
@@ -20,5 +21,9 @@ public class ErrorNotificationPage {
         yearFieldSub.shouldBe(visible);
         cardHolderFieldSub.shouldBe(visible);
         cvvFieldSub.shouldBe(visible);
+    }
+
+    public void shouldErrorBeVisible(){
+        errorNotification.shouldBe(visible);
     }
 }

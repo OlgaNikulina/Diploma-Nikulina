@@ -5,11 +5,13 @@ import org.junit.jupiter.api.Test;
 import ru.netology.data.DataHelper;
 import ru.netology.page.RequestToBuy;
 
+import java.sql.SQLException;
+
 import static com.codeborne.selenide.Selenide.open;
 
 public class TestToBuy {
     @Test
-    void shouldSendFormWith41Card() {
+    void shouldSendFormWith41Card() throws SQLException {
         val requestToBuy = open("http://localhost:8080", RequestToBuy.class);
         val cardsInfo = DataHelper.getCardsInfoWith41();
         val successfullyNotificationPage = requestToBuy.shouldReplenishFormToBuyWithCorrectValues(cardsInfo);
@@ -17,11 +19,11 @@ public class TestToBuy {
     }
 
     @Test
-    void shouldSendFormWith42Card() {
+    void shouldSendFormWith42Card() throws SQLException {
         val requestToBuy = open("http://localhost:8080", RequestToBuy.class);
         val cardsInfo = DataHelper.getCardsInfoWith42();
-        val successfullyNotificationPage = requestToBuy.shouldReplenishFormToBuyWithCorrectValues(cardsInfo);
-        successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
+        val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithCorrectValues(cardsInfo);
+        errorNotificationPage
     }
 
     @Test
