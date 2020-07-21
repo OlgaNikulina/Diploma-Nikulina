@@ -12,23 +12,23 @@ import static com.codeborne.selenide.Selenide.open;
 public class TestToBuy {
     @Test
     void shouldSendFormWith41Card() throws SQLException {
-        val requestToBuy = open("http://localhost:8080", RequestToBuy.class);
+        val requestToBuy = open("http://localhost:8080" , RequestToBuy.class);
         val cardsInfo = DataHelper.getCardsInfoWith41();
-        val successfullyNotificationPage = requestToBuy.shouldReplenishFormToBuyWithCorrectValues(cardsInfo);
+        val successfullyNotificationPage = requestToBuy.shouldReplenishFormToBuyWithCorrectValues41(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
     }
 
     @Test
     void shouldSendFormWith42Card() throws SQLException {
-        val requestToBuy = open("http://localhost:8080", RequestToBuy.class);
+        val requestToBuy = open("http://localhost:8080" , RequestToBuy.class);
         val cardsInfo = DataHelper.getCardsInfoWith42();
-        val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithCorrectValues(cardsInfo);
-        errorNotificationPage
+        val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithCorrectValues42(cardsInfo);
+        errorNotificationPage.shouldErrorBeVisible();
     }
 
     @Test
     void shouldNotSendFormWithEmptyFields() {
-        val requestToBuy = open("http://localhost:8080", RequestToBuy.class);
+        val requestToBuy = open("http://localhost:8080" , RequestToBuy.class);
         val cardsInfo = DataHelper.getCardsInfoWithEmptyFields();
         val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithEmptyFields(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
@@ -36,7 +36,7 @@ public class TestToBuy {
 
     @Test
     void shouldNotSendFormWithSingleSymbols() {
-        val requestToBuy = open("http://localhost:8080", RequestToBuy.class);
+        val requestToBuy = open("http://localhost:8080" , RequestToBuy.class);
         val cardsInfo = DataHelper.getCardsInfoWithSingleSymbols();
         val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithSingleSymbols(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();

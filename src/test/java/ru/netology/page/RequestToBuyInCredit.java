@@ -15,7 +15,7 @@ public class RequestToBuyInCredit {
     private SelenideElement cvvField = $("[placeholder='999']");
     private SelenideElement buttonContinue = $$("span.button__text").find(exactText("Продолжить"));
 
-    public SuccessfullyNotificationPage shouldReplenishFormToBuyInCreditWithCorrectValues(DataHelper.CardsInfo info) {
+    public SuccessfullyNotificationPage shouldReplenishFormToBuyInCreditWithCorrectValues41(DataHelper.CardsInfo info) {
         buyInCredit.click();
         cardNumberField.setValue(info.getCardNumber());
         monthField.setValue(info.getMonth());
@@ -25,6 +25,18 @@ public class RequestToBuyInCredit {
         buttonContinue.click();
         buttonContinue.click();
         return new SuccessfullyNotificationPage();
+    }
+
+    public ErrorNotificationPage shouldReplenishFormToBuyInCreditWithCorrectValues42(DataHelper.CardsInfo info) {
+        buyInCredit.click();
+        cardNumberField.setValue(info.getCardNumber());
+        monthField.setValue(info.getMonth());
+        yearField.setValue(info.getYear());
+        cardHolderField.setValue(info.getName());
+        cvvField.setValue(info.getCvv());
+        buttonContinue.click();
+        buttonContinue.click();
+        return new ErrorNotificationPage();
     }
 
     public ErrorNotificationPage shouldReplenishFormToBuyInCreditWithEmptyFields(DataHelper.CardsInfo info) {
