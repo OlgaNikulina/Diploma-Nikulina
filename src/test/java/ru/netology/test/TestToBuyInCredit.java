@@ -16,8 +16,8 @@ public class TestToBuyInCredit {
         val cardsInfo = DataHelper.getCardsInfoWith41();
         val successfullyNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithCorrectValues41(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
-        val transaction_idSQL = "SELECT transaction_id FROM payment_entity WHERE number = 4444 4444 4444 4441";
-        System.out.println(transaction_idSQL);
+        DataHelper.shouldDeleteFromDB();
+
     }
 
     @Test
@@ -26,21 +26,24 @@ public class TestToBuyInCredit {
         val cardsInfo = DataHelper.getCardsInfoWith42();
         val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithCorrectValues42(cardsInfo);
         errorNotificationPage.shouldErrorBeVisible();
+        DataHelper.shouldDeleteFromDB();
     }
 
     @Test
-    void shouldNotSendFormWithEmptyFields() {
+    void shouldNotSendFormWithEmptyFields() throws SQLException {
         val requestToBuyInCredit = open("http://localhost:8080", RequestToBuyInCredit.class);
         val cardsInfo = DataHelper.getCardsInfoWithEmptyFields();
         val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithEmptyFields(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
+        DataHelper.shouldDeleteFromDB();
     }
 
     @Test
-    void shouldNotSendFormWithSingleSymbols() {
+    void shouldNotSendFormWithSingleSymbols() throws SQLException {
         val requestToBuyInCredit = open("http://localhost:8080", RequestToBuyInCredit.class);
         val cardsInfo = DataHelper.getCardsInfoWithSingleSymbols();
         val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithEmptyFields(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
+        DataHelper.shouldDeleteFromDB();
     }
 }

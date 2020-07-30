@@ -16,6 +16,7 @@ public class TestToBuy {
         val cardsInfo = DataHelper.getCardsInfoWith41();
         val successfullyNotificationPage = requestToBuy.shouldReplenishFormToBuyWithCorrectValues41(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
+        DataHelper.shouldDeleteFromDB();
     }
 
     @Test
@@ -24,21 +25,24 @@ public class TestToBuy {
         val cardsInfo = DataHelper.getCardsInfoWith42();
         val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithCorrectValues42(cardsInfo);
         errorNotificationPage.shouldErrorBeVisible();
+        DataHelper.shouldDeleteFromDB();
     }
 
     @Test
-    void shouldNotSendFormWithEmptyFields() {
+    void shouldNotSendFormWithEmptyFields() throws SQLException {
         val requestToBuy = open("http://localhost:8080" , RequestToBuy.class);
         val cardsInfo = DataHelper.getCardsInfoWithEmptyFields();
         val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithEmptyFields(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
+        DataHelper.shouldDeleteFromDB();
     }
 
     @Test
-    void shouldNotSendFormWithSingleSymbols() {
+    void shouldNotSendFormWithSingleSymbols() throws SQLException {
         val requestToBuy = open("http://localhost:8080" , RequestToBuy.class);
         val cardsInfo = DataHelper.getCardsInfoWithSingleSymbols();
         val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithSingleSymbols(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
+        DataHelper.shouldDeleteFromDB();
     }
 }
