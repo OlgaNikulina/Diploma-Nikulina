@@ -20,12 +20,12 @@ public class DataHelper {
     }
 
     public static CardsInfo getCardsInfoWith41ToBuy() throws SQLException {
-        val transaction_idSQL = "SELECT * FROM payment_entity;";
+        val cardNumberSQL = "SELECT * FROM payment_entity;";
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
-                val transaction_idStmt = conn.prepareStatement(transaction_idSQL);
+                val cardNumberStmt = conn.prepareStatement(cardNumberSQL);
         ) {
-            try (val rs = transaction_idStmt.executeQuery(transaction_idSQL)) {
+            try (val rs = cardNumberStmt.executeQuery(cardNumberSQL)) {
                 String transaction_id = "";
                 String cardNumber = "";
                 while (rs.first()) {
@@ -34,16 +34,16 @@ public class DataHelper {
                 }
             }
         }
-        return new CardsInfo(transaction_idSQL, "08", "22", "Name", "999");
+        return new CardsInfo(cardNumberSQL, "08", "22", "Name", "999");
     }
 
     public static CardsInfo getCardsInfoWith42ToBuy() throws SQLException {
-        val transaction_idSQL = "SELECT * FROM payment_entity;";
+        val cardNumberSQL = "SELECT * FROM payment_entity;";
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
-                val transaction_idStmt = conn.prepareStatement(transaction_idSQL);
+                val cardNumberStmt = conn.prepareStatement(cardNumberSQL);
         ) {
-            try (val rs = transaction_idStmt.executeQuery(transaction_idSQL)) {
+            try (val rs = cardNumberStmt.executeQuery(cardNumberSQL)) {
                 String transaction_id = "";
                 String cardNumber = "";
                 while (rs.last()) {
@@ -52,7 +52,7 @@ public class DataHelper {
                 }
             }
         }
-        return new CardsInfo(transaction_idSQL, "08", "22", "Name", "999");
+        return new CardsInfo(cardNumberSQL, "08", "22", "Name", "999");
     }
 
     public static void shouldDeleteFromDBToBuy() throws SQLException {
@@ -66,12 +66,12 @@ public class DataHelper {
     }
 
     public static CardsInfo getCardsInfoWith41ToBuyInCredit() throws SQLException {
-        val idSQL = "SELECT * FROM credit_request_entity;";
+        val cardNumberSQL = "SELECT * FROM credit_request_entity;";
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
-                val idStmt = conn.prepareStatement(idSQL);
+                val cardNumberStmt = conn.prepareStatement(cardNumberSQL);
         ) {
-            try (val rs = idStmt.executeQuery(idSQL)) {
+            try (val rs = cardNumberStmt.executeQuery(cardNumberSQL)) {
                 String id = "";
                 String cardNumber = "";
                 while (rs.first()) {
@@ -80,16 +80,16 @@ public class DataHelper {
                 }
             }
         }
-        return new CardsInfo(idSQL, "08", "22", "Name", "999");
+        return new CardsInfo(cardNumberSQL, "08", "22", "Name", "999");
     }
 
     public static CardsInfo getCardsInfoWith42ToBuyInCredit() throws SQLException {
-        val idSQL = "SELECT * FROM credit_request_entity;";
+        val cardNumberSQL = "SELECT * FROM credit_request_entity;";
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
-                val idStmt = conn.prepareStatement(idSQL);
+                val cardNumberStmt = conn.prepareStatement(cardNumberSQL);
         ) {
-            try (val rs = idStmt.executeQuery(idSQL)) {
+            try (val rs = cardNumberStmt.executeQuery(cardNumberSQL)) {
                 String id = "";
                 String cardNumber = "";
                 while (rs.last()) {
@@ -98,7 +98,7 @@ public class DataHelper {
                 }
             }
         }
-        return new CardsInfo(idSQL, "08", "22", "Name", "999");
+        return new CardsInfo(cardNumberSQL, "08", "22", "Name", "999");
     }
 
     public static void shouldDeleteFromDBToBuyInCredit() throws SQLException {
