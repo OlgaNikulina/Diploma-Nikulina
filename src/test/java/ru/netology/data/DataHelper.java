@@ -55,14 +55,23 @@ public class DataHelper {
         return new CardsInfo(cardNumberSQL, "08", "22", "Name", "999");
     }
 
-    public static void shouldDeleteFromDBToBuy() throws SQLException {
+    public static CardsInfo shouldDeleteFromDBToBuy() throws SQLException {
         val SQL = "DELETE FROM payment_entity ORDER BY transaction_id LIMIT 1;";
 
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
                 val SQLStmt = conn.prepareStatement(SQL);
         ) {
+            try (val rs = SQLStmt.executeQuery(SQL)) {
+                String transaction_id = "";
+                String cardNumber = "";
+                while (rs.next()) {
+                    transaction_id = rs.getString("");
+                    cardNumber = rs.getString("");
+                }
+            }
         }
+        return new CardsInfo(SQL, "", "", "", "");
     }
 
     public static CardsInfo getCardsInfoWith41ToBuyInCredit() throws SQLException {
@@ -101,14 +110,23 @@ public class DataHelper {
         return new CardsInfo(cardNumberSQL, "08", "22", "Name", "999");
     }
 
-    public static void shouldDeleteFromDBToBuyInCredit() throws SQLException {
+    public static CardsInfo shouldDeleteFromDBToBuyInCredit() throws SQLException {
         val SQL = "DELETE FROM credit_request_entity ORDER BY id LIMIT 1;";
 
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
                 val SQLStmt = conn.prepareStatement(SQL);
         ) {
+            try (val rs = SQLStmt.executeQuery(SQL)) {
+                String id = "";
+                String cardNumber = "";
+                while (rs.next()) {
+                    id = rs.getString("");
+                    cardNumber = rs.getString("");
+                }
+            }
         }
+        return new CardsInfo(SQL, "", "", "", "");
     }
 
     public static CardsInfo getCardsInfoWithEmptyFields() {
