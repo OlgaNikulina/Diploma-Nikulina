@@ -5,14 +5,14 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.*;
 
 public class ErrorNotificationPage {
-    private SelenideElement cardNumberFieldSub = $$("input.input__sub" ).find(Condition.exactText("Неверный формат" ));
-    private SelenideElement monthFieldSub = $$("input.input__sub" ).find(Condition.exactText("Неверный формат" ));
-    private SelenideElement yearFieldSub = $$("input.input__sub" ).find(Condition.exactText("Неверный формат" ));
-    private SelenideElement cardHolderFieldSub = $$("input.input__sub" ).find(Condition.exactText("Поле обязательно для заполнения" ));
-    private SelenideElement cvvFieldSub = $$("input.input__sub" ).find(Condition.exactText("Неверный формат" ));
+    private SelenideElement cardNumberFieldSub = $("div > form > fieldset > div:nth-child(1) > span > span > span.input__sub" );
+    private SelenideElement monthFieldSub = $("div > form > fieldset > div:nth-child(2) > span > span:nth-child(1) > span > span > span.input__sub");
+    private SelenideElement yearFieldSub = $("div > form > fieldset > div:nth-child(2) > span > span:nth-child(2) > span > span > span.input__sub" );
+    private SelenideElement cardHolderFieldSub = $("div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__sub" );
+    private SelenideElement cvvFieldSub = $("div > form > fieldset > div:nth-child(3) > span > span:nth-child(2) > span > span > span.input__sub" );
     private SelenideElement errorNotification = $$("div.notification__title" ).find(exactText("[Ошибка]" ));
 
     public void shouldErrorNotificationBeVisible() {
