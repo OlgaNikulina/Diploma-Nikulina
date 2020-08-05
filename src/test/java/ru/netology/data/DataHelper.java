@@ -2,6 +2,7 @@ package ru.netology.data;
 
 import lombok.Value;
 import lombok.val;
+import org.checkerframework.checker.units.qual.C;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -19,26 +20,35 @@ public class DataHelper {
         private String cvv;
     }
 
-    public static CardsInfo getCardsInfoWith41ToBuy() throws SQLException {
+    public static CardsInfo getCardsInfoWith41ToBuy() {
+
+        return new CardsInfo("4444 4444 4444 4441", "08", "22", "Name", "999");
+    }
+
+    public static CardsInfo getCardsInfoWith42ToBuy() throws SQLException {
         val cardNumberSQL = "SELECT * FROM payment_entity;";
-        try (
-                val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
-                val cardNumberStmt = conn.prepareStatement(cardNumberSQL);
-        ) {
+        ){
             try (val rs = cardNumberStmt.executeQuery(cardNumberSQL)) {
                 String transaction_id = "";
                 String cardNumber = "";
-                while (rs.first()) {
+                while (rs.last()) {
                     transaction_id = rs.getString("transaction_id");
                     cardNumber = rs.getString("cardNumber");
                 }
             }
         }
-        return new CardsInfo(cardNumberSQL, "08", "22", "Name", "999");
+        return new CardsInfo("4444 4444 4444 4442", "08", "22", "Name", "999");
     }
 
-    public static CardsInfo getCardsInfoWith42ToBuy() throws SQLException {
-        val cardNumberSQL = "SELECT * FROM payment_entity;";
+    public static CardsInfo shouldSelectFromDBToBuy() throws SQLException {
+        val transaction_id = "SELECT transaction_id FROM payment_entity;";
+        SELECT id FROM credit_request_entity
+        SELECT status FROM credit_request_entity
+        SELECT credit_id FROM order_entity
+        SELECT id FROM order_entity
+        SELECT id FROM payment_entity
+        SELECT status FROM payment_entity
+        SELECT payment_id FROM order_entity
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
                 val cardNumberStmt = conn.prepareStatement(cardNumberSQL);
@@ -52,26 +62,12 @@ public class DataHelper {
                 }
             }
         }
-        return new CardsInfo(cardNumberSQL, "08", "22", "Name", "999");
+
     }
 
-    public static CardsInfo shouldDeleteFromDBToBuy() throws SQLException {
-        val SQL = "DELETE FROM payment_entity ORDER BY transaction_id LIMIT 1;";
-
-        try (
-                val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
-                val SQLStmt = conn.prepareStatement(SQL);
-        ) {
-            try (val rs = SQLStmt.executeQuery(SQL)) {
-                String transaction_id = "";
-                String cardNumber = "";
-                while (rs.next()) {
-                    transaction_id = rs.getString("");
-                    cardNumber = rs.getString("");
-                }
-            }
-        }
-        return new CardsInfo(SQL, "", "", "", "");
+    public static String shouldDeleteFromDBToBuy() {
+        val SQL = "DELETE FROM payment_entity;";
+        return SQL;
     }
 
     public static CardsInfo getCardsInfoWith41ToBuyInCredit() throws SQLException {
@@ -89,7 +85,7 @@ public class DataHelper {
                 }
             }
         }
-        return new CardsInfo(cardNumberSQL, "08", "22", "Name", "999");
+        return new CardsInfo("4444 4444 4444 4441", "08", "22", "Name", "999");
     }
 
     public static CardsInfo getCardsInfoWith42ToBuyInCredit() throws SQLException {
@@ -107,26 +103,12 @@ public class DataHelper {
                 }
             }
         }
-        return new CardsInfo(cardNumberSQL, "08", "22", "Name", "999");
+        return new CardsInfo("4444 4444 4444 4442", "08", "22", "Name", "999");
     }
 
-    public static CardsInfo shouldDeleteFromDBToBuyInCredit() throws SQLException {
-        val SQL = "DELETE FROM credit_request_entity ORDER BY id LIMIT 1;";
-
-        try (
-                val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
-                val SQLStmt = conn.prepareStatement(SQL);
-        ) {
-            try (val rs = SQLStmt.executeQuery(SQL)) {
-                String id = "";
-                String cardNumber = "";
-                while (rs.next()) {
-                    id = rs.getString("");
-                    cardNumber = rs.getString("");
-                }
-            }
-        }
-        return new CardsInfo(SQL, "", "", "", "");
+    public static String shouldDeleteFromDBToBuyInCredit() {
+        val SQL = "DELETE FROM credit_request_entity;";
+        return SQL;
     }
 
     public static CardsInfo getCardsInfoWithEmptyFields() {
