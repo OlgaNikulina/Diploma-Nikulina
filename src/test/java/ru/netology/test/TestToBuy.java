@@ -16,6 +16,7 @@ public class TestToBuy {
         val cardsInfo = DataHelper.getCardsInfoWith41ToBuy();
         val successfullyNotificationPage = requestToBuy.shouldReplenishFormToBuyWithCorrectValues41(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
+        DataHelper.shouldSelectFromDBToBuy();
         DataHelper.shouldDeleteFromDBToBuy();
     }
 
