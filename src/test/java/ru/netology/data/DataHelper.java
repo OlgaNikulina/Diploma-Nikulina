@@ -69,8 +69,9 @@ public class DataHelper {
         }
     }
 
-    public static void shouldDeleteFromDBToBuy() {
+    public static String shouldDeleteFromDBToBuy() {
         val SQL = "DELETE FROM payment_entity;";
+        return SQL;
     }
 
     public static CardsInfo getCardsInfoWith41ToBuyInCredit() {
