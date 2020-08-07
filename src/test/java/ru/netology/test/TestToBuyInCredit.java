@@ -16,7 +16,7 @@ public class TestToBuyInCredit {
         val cardsInfo = DataHelper.getCardsInfoWith41ToBuyInCredit();
         val successfullyNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithCorrectValues41(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
-        DataHelper.shouldSelectFromDBToBuy();
+        DataHelper.shouldSelectFromDBToBuyInCredit();
         DataHelper.shouldDeleteFromDBToBuyInCredit();
 
     }
@@ -27,7 +27,7 @@ public class TestToBuyInCredit {
         val cardsInfo = DataHelper.getCardsInfoWith42ToBuyInCredit();
         val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithCorrectValues42(cardsInfo);
         errorNotificationPage.shouldErrorBeVisible();
-        DataHelper.shouldSelectFromDBToBuy();
+        DataHelper.shouldSelectFromDBToBuyInCredit();
         DataHelper.shouldDeleteFromDBToBuyInCredit();
     }
 
