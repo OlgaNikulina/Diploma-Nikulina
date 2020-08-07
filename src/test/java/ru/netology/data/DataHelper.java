@@ -30,24 +30,18 @@ public class DataHelper {
     }
 
     public static void shouldSelectFromDBToBuy() throws SQLException {
-        val id_order_entitySQL = "SELECT id FROM order_entity;";
         val id_payment_entitySQL = "SELECT id FROM payment_entity;";
         val status_payment_entitySQL = "SELECT status FROM payment_entity;";
+        val id_order_entitySQL = "SELECT id FROM order_entity;";
         val payment_idSQL = "SELECT payment_id FROM order_entity;";
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
 
-                val id_order_entityStmt = conn.createStatement();
                 val id_payment_entityStmt = conn.createStatement();
                 val status_payment_entityStmt = conn.createStatement();
+                val id_order_entityStmt = conn.createStatement();
                 val payment_idStmt = conn.createStatement()
         ) {
-            try (val rs = id_order_entityStmt.executeQuery(id_order_entitySQL)) {
-                while (rs.next()) {
-                    val id_order_entity = rs.getString("id_order_entity");
-                    System.out.println(id_order_entity);
-                }
-            }
             try (val rs = id_payment_entityStmt.executeQuery(id_payment_entitySQL)) {
                 while (rs.next()) {
                     val id_payment_entity = rs.getString("id_payment_entity");
@@ -58,6 +52,12 @@ public class DataHelper {
                 while (rs.next()) {
                     val status_payment_entity = rs.getString("status");
                     System.out.println(status_payment_entity);
+                }
+            }
+            try (val rs = id_order_entityStmt.executeQuery(id_order_entitySQL)) {
+                while (rs.next()) {
+                    val id_order_entity = rs.getString("id_order_entity");
+                    System.out.println(id_order_entity);
                 }
             }
             try (val rs = payment_idStmt.executeQuery(payment_idSQL)) {
