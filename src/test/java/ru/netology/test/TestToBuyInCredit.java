@@ -16,6 +16,7 @@ public class TestToBuyInCredit {
         val cardsInfo = DataHelper.getCardsInfoWith41ToBuyInCredit();
         val successfullyNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithCorrectValues41(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
+        DataHelper.shouldSelectFromDBToBuy();
         DataHelper.shouldDeleteFromDBToBuyInCredit();
 
     }
@@ -26,11 +27,12 @@ public class TestToBuyInCredit {
         val cardsInfo = DataHelper.getCardsInfoWith42ToBuyInCredit();
         val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithCorrectValues42(cardsInfo);
         errorNotificationPage.shouldErrorBeVisible();
+        DataHelper.shouldSelectFromDBToBuy();
         DataHelper.shouldDeleteFromDBToBuyInCredit();
     }
 
     @Test
-    void shouldNotSendFormWithEmptyFields() throws SQLException {
+    void shouldNotSendFormWithEmptyFields() {
         val requestToBuyInCredit = open("http://localhost:8080", RequestToBuyInCredit.class);
         val cardsInfo = DataHelper.getCardsInfoWithEmptyFields();
         val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithEmptyFields(cardsInfo);
@@ -39,7 +41,7 @@ public class TestToBuyInCredit {
     }
 
     @Test
-    void shouldNotSendFormWithSingleSymbols() throws SQLException {
+    void shouldNotSendFormWithSingleSymbols() {
         val requestToBuyInCredit = open("http://localhost:8080", RequestToBuyInCredit.class);
         val cardsInfo = DataHelper.getCardsInfoWithSingleSymbols();
         val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithEmptyFields(cardsInfo);
