@@ -13,7 +13,7 @@ public class ErrorNotificationPage {
     private SelenideElement yearFieldSub = $("div > form > fieldset > div:nth-child(2) > span > span:nth-child(2) > span > span > span.input__sub" );
     private SelenideElement cardHolderFieldSub = $("div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__sub" );
     private SelenideElement cvvFieldSub = $("div > form > fieldset > div:nth-child(3) > span > span:nth-child(2) > span > span > span.input__sub" );
-    private SelenideElement errorNotification = $$("div.notification__title" ).find(exactText("[Ошибка]" ));
+    private SelenideElement errorNotification = $$("div.notification__title" ).find(exactText("Ошибка" ));
 
     public void shouldErrorNotificationBeVisible() {
         cardNumberFieldSub.shouldBe(visible);

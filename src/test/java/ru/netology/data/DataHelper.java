@@ -21,12 +21,12 @@ public class DataHelper {
 
     public static CardsInfo getCardsInfoWith41ToBuy() {
 
-        return new CardsInfo("4444 4444 4444 4441", "08", "22", "Name", "999");
+        return new CardsInfo("4444 4444 4444 4441", "08", "22", "Alex", "999");
     }
 
     public static CardsInfo getCardsInfoWith42ToBuy() {
 
-        return new CardsInfo("4444 4444 4444 4442", "08", "22", "Name", "999");
+        return new CardsInfo("4444 4444 4444 4442", "08", "22", "Alex", "999");
     }
 
     public static void shouldSelectFromDBToBuy() throws SQLException {
@@ -76,12 +76,12 @@ public class DataHelper {
 
     public static CardsInfo getCardsInfoWith41ToBuyInCredit() {
 
-        return new CardsInfo("4444 4444 4444 4441", "08", "22", "Name", "999");
+        return new CardsInfo("4444 4444 4444 4441", "08", "22", "Alex", "999");
     }
 
     public static CardsInfo getCardsInfoWith42ToBuyInCredit() {
 
-        return new CardsInfo("4444 4444 4444 4442", "08", "22", "Name", "999");
+        return new CardsInfo("4444 4444 4444 4442", "08", "22", "Alex", "999");
     }
 
     public static void shouldSelectFromDBToBuyInCredit() throws SQLException {
