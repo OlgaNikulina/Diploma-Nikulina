@@ -2,9 +2,11 @@ version: '3.7'
 services:
   node-app:
     build: .
-    image: node-app:1.0
+    image: node-app:latest
     ports:
       - '9999:9999'
+    volumes:
+    - ./app:/gate-simulator/app.js
   mysql:
     image: mysql:8.0.18
     restart: always
