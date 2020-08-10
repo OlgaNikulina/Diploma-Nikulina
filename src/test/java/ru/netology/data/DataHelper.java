@@ -40,22 +40,16 @@ public class DataHelper {
                 val idStmt = conn.createStatement();
                 val payment_idStmt = conn.createStatement()
         ) {
-            try (val rs = id_payment_entityStmt.executeQuery(id_payment_entitySQL)) {
+            try (val rs = statusStmt.executeQuery(statusSQL)) {
                 while (rs.next()) {
-                    val id_payment_entity = rs.getString("id_payment_entity");
-                    System.out.println(id_payment_entity);
+                    val status = rs.getString("status");
+                    System.out.println(status);
                 }
             }
-            try (val rs = status_payment_entityStmt.executeQuery(status_payment_entitySQL)) {
+            try (val rs = idStmt.executeQuery(idSQL)) {
                 while (rs.next()) {
-                    val status_payment_entity = rs.getString("status");
-                    System.out.println(status_payment_entity);
-                }
-            }
-            try (val rs = id_order_entityStmt.executeQuery(id_order_entitySQL)) {
-                while (rs.next()) {
-                    val id_order_entity = rs.getString("id_order_entity");
-                    System.out.println(id_order_entity);
+                    val id = rs.getString("id");
+                    System.out.println(id);
                 }
             }
             try (val rs = payment_idStmt.executeQuery(payment_idSQL)) {
@@ -83,29 +77,21 @@ public class DataHelper {
     }
 
     public static void shouldSelectFromDBToBuyInCredit() throws SQLException {
-        val id_credit_requestSQL = "SELECT id FROM credit_request_entity;";
-        val status_credit_requestSQL = "SELECT status FROM credit_request_entity;";
+        val statusSQL = "SELECT status FROM credit_request_entity;";
         val credit_idSQL = "SELECT credit_id FROM order_entity;";
-        val id_order_entitySQL = "SELECT id FROM order_entity;";
+        val idSQL = "SELECT id FROM order_entity;";
 
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
 
-                val id_credit_requestStmt = conn.createStatement();
-                val status_credit_requestStmt = conn.createStatement();
+                val statusStmt = conn.createStatement();
                 val credit_idStmt = conn.createStatement();
-                val id_order_entityStmt = conn.createStatement()
+                val idStmt = conn.createStatement()
         ) {
-            try (val rs = id_credit_requestStmt.executeQuery(id_credit_requestSQL)) {
+            try (val rs = statusStmt.executeQuery(statusSQL)) {
                 while (rs.next()) {
-                    val id_credit_request = rs.getString("id_credit");
-                    System.out.println(id_credit_request);
-                }
-            }
-            try (val rs = status_credit_requestStmt.executeQuery(status_credit_requestSQL)) {
-                while (rs.next()) {
-                    val status_credit_request = rs.getString("status");
-                    System.out.println(status_credit_request);
+                    val status = rs.getString("status");
+                    System.out.println(status);
                 }
             }
             try (val rs = credit_idStmt.executeQuery(credit_idSQL)) {
@@ -114,10 +100,10 @@ public class DataHelper {
                     System.out.println(credit_id);
                 }
             }
-            try (val rs = id_order_entityStmt.executeQuery(id_order_entitySQL)) {
+            try (val rs = idStmt.executeQuery(idSQL)) {
                 while (rs.next()) {
-                    val id_order_entity = rs.getString("id_order_entity");
-                    System.out.println(id_order_entity);
+                    val id = rs.getString("id");
+                    System.out.println(id);
                 }
             }
         }
