@@ -13,7 +13,7 @@ public class RequestToBuyInCredit {
     private SelenideElement yearField = $("[placeholder='22']");
     private SelenideElement cardHolderField =  $x("//*[@type='text' and not(@placeholder)]");
     private SelenideElement cvvField = $("[placeholder='999']");
-    private SelenideElement buttonContinue = $$("span.button__text").find(exactText("Продолжить"));
+    private SelenideElement buttonContinue = $$("span.button__text" ).find(exactText("Продолжить" ));
 
     public SuccessfullyNotificationPage shouldReplenishFormToBuyInCreditWithCorrectValues41(DataHelper.CardsInfo info) {
         buyInCredit.click();
