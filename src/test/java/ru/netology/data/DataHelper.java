@@ -30,16 +30,14 @@ public class DataHelper {
     }
 
     public static void shouldSelectFromDBToBuy() throws SQLException {
-        val id_payment_entitySQL = "SELECT id FROM payment_entity;";
-        val status_payment_entitySQL = "SELECT status FROM payment_entity;";
-        val id_order_entitySQL = "SELECT id FROM order_entity;";
+        val statusSQL = "SELECT status FROM payment_entity;";
+        val idSQL = "SELECT id FROM order_entity;";
         val payment_idSQL = "SELECT payment_id FROM order_entity;";
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
 
-                val id_payment_entityStmt = conn.createStatement();
-                val status_payment_entityStmt = conn.createStatement();
-                val id_order_entityStmt = conn.createStatement();
+                val statusStmt = conn.createStatement();
+                val idStmt = conn.createStatement();
                 val payment_idStmt = conn.createStatement()
         ) {
             try (val rs = id_payment_entityStmt.executeQuery(id_payment_entitySQL)) {
