@@ -17,3 +17,14 @@ services:
       - MYSQL_DATABASE=app
       - MYSQL_USER=app
       - MYSQL_PASSWORD=pass
+  postgres:
+    image: postgres:12-alpine
+    ports:
+      - '5432:5432'
+    restart: always
+    volumes:
+      - "./db-data:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=my_db
