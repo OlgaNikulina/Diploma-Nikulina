@@ -19,12 +19,12 @@ public class DataHelper {
         private String cvv;
     }
 
-    public static CardsInfo getCardsInfoWith41ToBuy() {
+    public static CardsInfo getCardsInfoWithApprovedCardToBuy() {
 
         return new CardsInfo("4444 4444 4444 4441", "08", "22", "Alex", "999");
     }
 
-    public static CardsInfo getCardsInfoWith42ToBuy() {
+    public static CardsInfo getCardsInfoWithDeclinedCardToBuy() {
 
         return new CardsInfo("4444 4444 4444 4442", "08", "22", "Alex", "999");
     }
@@ -66,12 +66,12 @@ public class DataHelper {
         return SQL;
     }
 
-    public static CardsInfo getCardsInfoWith41ToBuyInCredit() {
+    public static CardsInfo getCardsInfoWithApprovedCardToBuyInCredit() {
 
         return new CardsInfo("4444 4444 4444 4441", "08", "22", "Alex", "999");
     }
 
-    public static CardsInfo getCardsInfoWith42ToBuyInCredit() {
+    public static CardsInfo getCardsInfoWithDeclinedCArdToBuyInCredit() {
 
         return new CardsInfo("4444 4444 4444 4442", "08", "22", "Alex", "999");
     }

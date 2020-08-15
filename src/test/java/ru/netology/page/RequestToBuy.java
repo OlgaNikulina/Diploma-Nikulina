@@ -15,7 +15,7 @@ public class RequestToBuy {
     private SelenideElement cvvField = $("[placeholder='999']" );
     private SelenideElement buttonContinue = $$("span.button__text" ).find(exactText("Продолжить" ));
 
-    public SuccessfullyNotificationPage shouldReplenishFormToBuyWithCorrectValues41(DataHelper.CardsInfo info) {
+    public SuccessfullyNotificationPage shouldReplenishFormToBuyWithApprovedCard(DataHelper.CardsInfo info) {
         buttonToBuy.click();
         cardNumberField.setValue(info.getCardNumber());
         monthField.setValue(info.getMonth());
@@ -26,7 +26,7 @@ public class RequestToBuy {
         return new SuccessfullyNotificationPage();
     }
 
-    public ErrorNotificationPage shouldReplenishFormToBuyWithCorrectValues42(DataHelper.CardsInfo info) {
+    public ErrorNotificationPage shouldReplenishFormToBuyWithDeclinedCard(DataHelper.CardsInfo info) {
         buttonToBuy.click();
         cardNumberField.setValue(info.getCardNumber());
         monthField.setValue(info.getMonth());

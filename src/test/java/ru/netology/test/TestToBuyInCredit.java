@@ -11,10 +11,10 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestToBuyInCredit {
     @Test
-    void shouldSendFormWith41Card() throws SQLException {
+    void shouldSendFormWithApprovedCard() throws SQLException {
         val requestToBuyInCredit = open("http://localhost:8080", RequestToBuyInCredit.class);
-        val cardsInfo = DataHelper.getCardsInfoWith41ToBuyInCredit();
-        val successfullyNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithCorrectValues41(cardsInfo);
+        val cardsInfo = DataHelper.getCardsInfoWithApprovedCardToBuyInCredit();
+        val successfullyNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithApprovedCard(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
         DataHelper.shouldSelectFromDBToBuyInCredit();
         DataHelper.shouldDeleteFromDBToBuyInCredit();
@@ -22,10 +22,10 @@ public class TestToBuyInCredit {
     }
 
     @Test
-    void shouldSendFormWith42Card() throws SQLException {
+    void shouldSendFormWithDeclinedCard() throws SQLException {
         val requestToBuyInCredit = open("http://localhost:8080", RequestToBuyInCredit.class);
-        val cardsInfo = DataHelper.getCardsInfoWith42ToBuyInCredit();
-        val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithCorrectValues42(cardsInfo);
+        val cardsInfo = DataHelper.getCardsInfoWithDeclinedCArdToBuyInCredit();
+        val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithDeclinedCard(cardsInfo);
         errorNotificationPage.shouldErrorBeVisible();
         DataHelper.shouldSelectFromDBToBuyInCredit();
         DataHelper.shouldDeleteFromDBToBuyInCredit();

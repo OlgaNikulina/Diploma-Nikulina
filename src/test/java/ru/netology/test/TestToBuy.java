@@ -11,20 +11,20 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestToBuy {
     @Test
-    void shouldSendFormWith41Card() throws SQLException {
+    void shouldSendFormWithApprovedCard() throws SQLException {
         val requestToBuy = open("http://localhost:8080" , RequestToBuy.class);
-        val cardsInfo = DataHelper.getCardsInfoWith41ToBuy();
-        val successfullyNotificationPage = requestToBuy.shouldReplenishFormToBuyWithCorrectValues41(cardsInfo);
+        val cardsInfo = DataHelper.getCardsInfoWithApprovedCardToBuy();
+        val successfullyNotificationPage = requestToBuy.shouldReplenishFormToBuyWithApprovedCard(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
         DataHelper.shouldSelectFromDBToBuy();
         DataHelper.shouldDeleteFromDBToBuy();
     }
 
     @Test
-    void shouldSendFormWith42Card() throws SQLException {
+    void shouldSendFormWithDeclinedCard() throws SQLException {
         val requestToBuy = open("http://localhost:8080" , RequestToBuy.class);
-        val cardsInfo = DataHelper.getCardsInfoWith42ToBuy();
-        val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithCorrectValues42(cardsInfo);
+        val cardsInfo = DataHelper.getCardsInfoWithDeclinedCardToBuy();
+        val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithDeclinedCard(cardsInfo);
         errorNotificationPage.shouldErrorBeVisible();
         DataHelper.shouldSelectFromDBToBuy();
         DataHelper.shouldDeleteFromDBToBuy();
