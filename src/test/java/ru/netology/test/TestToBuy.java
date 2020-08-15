@@ -1,7 +1,9 @@
 package ru.netology.test;
 
 import lombok.val;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.util.Assert;
 import ru.netology.data.DataHelper;
 import ru.netology.page.RequestToBuy;
 
@@ -17,6 +19,8 @@ public class TestToBuy {
         val successfullyNotificationPage = requestToBuy.shouldReplenishFormToBuyWithApprovedCard(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
         DataHelper.shouldSelectFromDBToBuy();
+        String status = "Approved";
+        Assertions.assertEquals(status, DataHelper.shouldSelectFromDBToBuy());
         DataHelper.shouldDeleteFromDBToBuy();
     }
 
