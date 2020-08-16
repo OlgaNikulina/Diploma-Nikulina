@@ -19,7 +19,7 @@
                                                                            spring.datasource.password=pass
    Для запуска СУБД postgres application.properties заменить на следующий: spring.credit-gate.url=http://localhost:9999/credit
                                                                            spring.payment-gate.url=http://localhost:9999/payment   
-                                                                           spring.datasource.url=jdbc:postgresql://192.168.99.100:5432/my_db
+                                                                           spring.datasource.url=jdbc:postgresql://localhost:5432/my_db
                                                                            spring.datasource.username=app
                                                                            spring.datasource.password=pass
 4. открыть приложение в браузере на http://localhost:8080
