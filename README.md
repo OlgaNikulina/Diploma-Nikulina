@@ -12,5 +12,15 @@
 2. выполнить команду docker-compose up, если запуск происходит впервые или docker-compose up --force-recreate, чтобы сделать перезапуск базы данных.
 3. - java -jar artifacts/aqa-shop.jar;
    - java -jar artifacts/aqa-shop.jar -P:jdbc.url=jdbc:postgres://192.168.99.100:3306/app -P:jdbc.user=app -P:jdbc.password=pass;
+   Для запуска СУБД postgres application.properties заменить на следующий: spring.credit-gate.url=http://localhost:9999/credit
+                                                                           spring.payment-gate.url=http://localhost:9999/payment
+                                                                           spring.datasource.url=jdbc:mysql://192.168.99.100:3306/app
+                                                                           spring.datasource.username=app
+                                                                           spring.datasource.password=pass
+   Для запуска СУБД postgres application.properties заменить на следующий: spring.credit-gate.url=http://localhost:9999/credit
+                                                                           spring.payment-gate.url=http://localhost:9999/payment   
+                                                                           spring.datasource.url=jdbc:postgresql://192.168.99.100:5432/my_db
+                                                                           spring.datasource.username=app
+                                                                           spring.datasource.password=pass
 4. открыть приложение в браузере на http://localhost:8080
 5. открыть Node.js command prompt, командой cd перейти в каталог /gate-simulator, выполнить команду npm start.
