@@ -32,7 +32,9 @@ dependencies {
     testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.30'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
     testCompile("io.github.bonigarcia:selenium-jupiter:3.3.4")
-    }
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.15'
+
+}
 
 test {
     useJUnitPlatform()

@@ -14,21 +14,24 @@ import static com.codeborne.selenide.Selenide.open;
 public class TestToBuy {
     @Test
     void shouldSendFormWithApprovedCard() throws SQLException {
-        val requestToBuy = open("http://localhost:8080" , RequestToBuy.class);
+        val requestToBuy = open("http://localhost:8080", RequestToBuy.class);
         val cardsInfo = DataHelper.getCardsInfoWithApprovedCardToBuy();
-        val successfullyNotificationPage = requestToBuy.shouldReplenishFormToBuyWithApprovedCard(cardsInfo);
+        val successfullyNotificationPage = requestToBuy.shouldReplenishFormToBuyWithSuccess(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
-        DataHelper.shouldSelectFromDBToBuy();
-        String status = "Approved";
-        Assertions.assertEquals(status, DataHelper.shouldSelectFromDBToBuy());
+        String status = "APPROVED";
+        String id = "a146f524-7da3-47d4-8ab4-1b262d46fdfd";
+        String payment_id = "3f1e3be1-e7e8-40a4-b188-85a77cbdf26b";
+        Assertions.assertSame(DataHelper.shouldSelectFromDBToBuy(status), status);
+        Assertions.assertEquals(DataHelper.shouldSelectFromDBToBuy(id), id);
+        Assertions.assertEquals(DataHelper.shouldSelectFromDBToBuy(payment_id), payment_id);
         DataHelper.shouldDeleteFromDBToBuy();
     }
 
     @Test
     void shouldSendFormWithDeclinedCard() throws SQLException {
-        val requestToBuy = open("http://localhost:8080" , RequestToBuy.class);
+        val requestToBuy = open("http://localhost:8080", RequestToBuy.class);
         val cardsInfo = DataHelper.getCardsInfoWithDeclinedCardToBuy();
-        val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithDeclinedCard(cardsInfo);
+        val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithError(cardsInfo);
         errorNotificationPage.shouldErrorBeVisible();
         DataHelper.shouldSelectFromDBToBuy();
         DataHelper.shouldDeleteFromDBToBuy();
@@ -36,18 +39,18 @@ public class TestToBuy {
 
     @Test
     void shouldNotSendFormWithEmptyFields() {
-        val requestToBuy = open("http://localhost:8080" , RequestToBuy.class);
+        val requestToBuy = open("http://localhost:8080", RequestToBuy.class);
         val cardsInfo = DataHelper.getCardsInfoWithEmptyFields();
-        val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithEmptyFields(cardsInfo);
+        val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithError(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
         DataHelper.shouldDeleteFromDBToBuy();
     }
 
     @Test
     void shouldNotSendFormWithSingleSymbols() {
-        val requestToBuy = open("http://localhost:8080" , RequestToBuy.class);
+        val requestToBuy = open("http://localhost:8080", RequestToBuy.class);
         val cardsInfo = DataHelper.getCardsInfoWithSingleSymbols();
-        val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithSingleSymbols(cardsInfo);
+        val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithError(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
         DataHelper.shouldDeleteFromDBToBuy();
     }

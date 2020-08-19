@@ -15,7 +15,7 @@ public class RequestToBuyInCredit {
     private SelenideElement cvvField = $("[placeholder='999']");
     private SelenideElement buttonContinue = $$("span.button__text" ).find(exactText("Продолжить" ));
 
-    public SuccessfullyNotificationPage shouldReplenishFormToBuyInCreditWithApprovedCard(DataHelper.CardsInfo info) {
+    public SuccessfullyNotificationPage shouldReplenishFormToBuyInCreditWithSuccess(DataHelper.CardsInfo info) {
         buyInCredit.click();
         cardNumberField.setValue(info.getCardNumber());
         monthField.setValue(info.getMonth());
@@ -27,7 +27,7 @@ public class RequestToBuyInCredit {
         return new SuccessfullyNotificationPage();
     }
 
-    public ErrorNotificationPage shouldReplenishFormToBuyInCreditWithDeclinedCard(DataHelper.CardsInfo info) {
+    public ErrorNotificationPage shouldReplenishFormToBuyInCreditWithError(DataHelper.CardsInfo info) {
         buyInCredit.click();
         cardNumberField.setValue(info.getCardNumber());
         monthField.setValue(info.getMonth());
@@ -35,28 +35,6 @@ public class RequestToBuyInCredit {
         cardHolderField.setValue(info.getName());
         cvvField.setValue(info.getCvv());
         buttonContinue.click();
-        buttonContinue.click();
-        return new ErrorNotificationPage();
-    }
-
-    public ErrorNotificationPage shouldReplenishFormToBuyInCreditWithEmptyFields(DataHelper.CardsInfo info) {
-        buyInCredit.click();
-        cardNumberField.setValue(info.getCardNumber());
-        monthField.setValue(info.getMonth());
-        yearField.setValue(info.getYear());
-        cardHolderField.setValue(info.getName());
-        cvvField.setValue(info.getCvv());
-        buttonContinue.click();
-        return new ErrorNotificationPage();
-    }
-
-    public ErrorNotificationPage shouldReplenishFormToBuyInCreditWithSingleSymbols(DataHelper.CardsInfo info) {
-        buyInCredit.click();
-        cardNumberField.setValue(info.getCardNumber());
-        monthField.setValue(info.getMonth());
-        yearField.setValue(info.getYear());
-        cardHolderField.setValue(info.getName());
-        cvvField.setValue(info.getCvv());
         buttonContinue.click();
         return new ErrorNotificationPage();
     }
