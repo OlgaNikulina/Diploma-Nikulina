@@ -30,7 +30,7 @@ public class DataHelper {
     }
 
     public static void shouldSelectFromDBToBuy() throws SQLException {
-        val statusSQL = "SELECT status FROM payment_entity;";
+        val statusSQL = "SELECT status FROM payment_entity LIMIT 1;";
         val idSQL = "SELECT id FROM order_entity;";
         val payment_idSQL = "SELECT payment_id FROM order_entity;";
         try (
