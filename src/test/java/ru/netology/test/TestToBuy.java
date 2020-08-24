@@ -24,8 +24,8 @@ public class TestToBuy {
         String status = "APPROVED";
         String id = "a146f524-7da3-47d4-8ab4-1b262d46fdfd";
         String payment_id = "3f1e3be1-e7e8-40a4-b188-85a77cbdf26b";
-        Objects.equals(DataHelper.shouldSelectFromDBToBuy(status), status);
-        Assertions.assertEquals(DataHelper.shouldSelectFromDBToBuy(), status);
+        String statusSQL = DataHelper.shouldSelectFromDBToBuy();
+        Assertions.assertEquals(statusSQL, status);
         Assertions.assertEquals(DataHelper.shouldSelectFromDBToBuy(), id);
         Assertions.assertEquals(DataHelper.shouldSelectFromDBToBuy(), payment_id);
         DataHelper.shouldDeleteFromDBToBuy();

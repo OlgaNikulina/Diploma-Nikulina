@@ -29,7 +29,7 @@ public class DataHelper {
         return new CardsInfo("4444 4444 4444 4442", "08", "22", "Alex", "999");
     }
 
-    public static void shouldSelectFromDBToBuy() throws SQLException {
+    public static String shouldSelectFromDBToBuy() throws SQLException {
         val statusSQL = "SELECT status FROM payment_entity LIMIT 1;";
         val idSQL = "SELECT id FROM order_entity;";
         val payment_idSQL = "SELECT payment_id FROM order_entity;";
@@ -59,6 +59,7 @@ public class DataHelper {
                 }
             }
         }
+        return statusSQL;
     }
 
     public static String shouldDeleteFromDBToBuy() {
