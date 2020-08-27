@@ -30,50 +30,51 @@ public class DataHelper {
     }
 
     public static String shouldSelectStatusFromDBToBuy() throws SQLException {
-        val statusSQL = "SELECT status FROM payment_entity  order by created ASC limit 1;";
+        val statusSQL = "SELECT status FROM payment_entity order by created ASC limit 1;";
+        String status = "";
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
                 val statusStmt = conn.createStatement();
         ) {
             try (val rs = statusStmt.executeQuery(statusSQL)) {
                 while (rs.next()) {
-                    val status = rs.getString("status");
-                    return status;
+                    status = rs.getString("status");
                 }
             }
         }
+        return status;
     }
 
     public static String shouldSelectIdFromDBToBuy() throws SQLException {
-        val idSQL = "SELECT id FROM order_entity;";
+        val idSQL = "SELECT id FROM order_entity limit 1;";
+        String id = "";
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
                 val idStmt = conn.createStatement();
         ) {
             try (val rs = idStmt.executeQuery(idSQL)) {
                 while (rs.next()) {
-                    val id = rs.getString("id");
-                    System.out.println(id);
+                    id = rs.getString("id");
                 }
             }
         }
-        return idSQL;
+        return id;
     }
 
     public static String shouldSelectPayment_IdFromDBToBuy() throws SQLException {
-        val payment_idSQL = "SELECT payment_id FROM order_entity;";
+        val payment_idSQL = "SELECT payment_id FROM order_entity limit 1;";
+        String payment_id = "";
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
                 val payment_idStmt = conn.createStatement()
         ) {
             try (val rs = payment_idStmt.executeQuery(payment_idSQL)) {
                 while (rs.next()) {
-                    val payment_id = rs.getString("payment_id");
-                    System.out.println(payment_id);
+                    payment_id = rs.getString("payment_id");
                 }
             }
         }
-        return payment_idSQL;
+        return payment_id;
     }
 
     public static String shouldDeleteFromDBToBuy() {
