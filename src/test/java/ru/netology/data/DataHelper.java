@@ -38,11 +38,10 @@ public class DataHelper {
             try (val rs = statusStmt.executeQuery(statusSQL)) {
                 while (rs.next()) {
                     val status = rs.getString("status");
-                    System.out.println(status);
+                    return status;
                 }
             }
         }
-        return statusSQL;
     }
 
     public static String shouldSelectIdFromDBToBuy() throws SQLException {
