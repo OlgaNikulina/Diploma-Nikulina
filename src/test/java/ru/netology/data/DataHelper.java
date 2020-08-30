@@ -46,14 +46,14 @@ public class DataHelper {
     }
 
     public static String shouldSelectIdFromDBToBuy() throws SQLException {
-        val idSQL = "SELECT id FROM order_entity limit 1;";
+        val idSQL = "SELECT id FROM order_entity oe order by created asc LIMIT 1;";
         String id = "";
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
                 val idStmt = conn.createStatement();
         ) {
             try (val rs = idStmt.executeQuery(idSQL)) {
-                while (rs.next()) {
+                if (rs.last()) {
                     id = rs.getString("id");
                 }
             }
@@ -77,9 +77,9 @@ public class DataHelper {
         return payment_id;
     }
 
-    public static String shouldDeleteFromDBToBuy() {
-        val SQL = "DELETE FROM payment_entity;";
-        return SQL;
+    public static void shouldDeleteFromDBToBuy() {
+        String payment_entity = "DELETE FROM payment_entity;";
+        String order_entity = "DELETE FROM order_entity;";
     }
 
     public static CardsInfo getCardsInfoWithApprovedCardToBuyInCredit() {
@@ -92,42 +92,57 @@ public class DataHelper {
         return new CardsInfo("4444 4444 4444 4442", "08", "22", "Alex", "999");
     }
 
-    public static void shouldSelectFromDBToBuyInCredit() throws SQLException {
-        val statusSQL = "SELECT status FROM credit_request_entity;";
-        val credit_idSQL = "SELECT credit_id FROM order_entity;";
-        val idSQL = "SELECT id FROM order_entity;";
-
+    public static String shouldSelectStatusFromDBToBuyInCredit() throws SQLException {
+        val statusSQL = "SELECT status FROM credit_request_entity order by created ASC limit 1;";
+        String status = "";
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
-
                 val statusStmt = conn.createStatement();
-                val credit_idStmt = conn.createStatement();
-                val idStmt = conn.createStatement()
         ) {
             try (val rs = statusStmt.executeQuery(statusSQL)) {
                 while (rs.next()) {
-                    val status = rs.getString("status");
-                    System.out.println(status);
-                }
-            }
-            try (val rs = credit_idStmt.executeQuery(credit_idSQL)) {
-                while (rs.next()) {
-                    val credit_id = rs.getString("credit_id");
-                    System.out.println(credit_id);
-                }
-            }
-            try (val rs = idStmt.executeQuery(idSQL)) {
-                while (rs.next()) {
-                    val id = rs.getString("id");
-                    System.out.println(id);
+                    status = rs.getString("status");
                 }
             }
         }
+        return status;
     }
 
-    public static String shouldDeleteFromDBToBuyInCredit() {
-        val SQL = "DELETE FROM credit_request_entity;";
-        return SQL;
+    public static String shouldSelectIdFromDBToBuyInCredit() throws SQLException {
+        val idSQL = "SELECT id FROM order_entity limit 1;";
+        String id = "";
+        try (
+                val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
+                val idStmt = conn.createStatement();
+        ) {
+            try (val rs = idStmt.executeQuery(idSQL)) {
+                while (rs.next()) {
+                    id = rs.getString("id");
+                }
+            }
+        }
+        return id;
+    }
+
+    public static String shouldSelectCredit_idFromDBToBuyInCredit() throws SQLException {
+        val credit_idSQL = "SELECT credit_id FROM order_entity limit 1;";
+        String credit_id = "";
+        try (
+                val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
+                val credit_idStmt = conn.createStatement()
+        ) {
+            try (val rs = credit_idStmt.executeQuery(credit_idSQL)) {
+                while (rs.next()) {
+                    credit_id = rs.getString("credit_id");
+                }
+            }
+        }
+        return credit_id;
+    }
+
+    public static void shouldDeleteFromDBToBuyInCredit() {
+        String credit_request_entity = "DELETE FROM credit_request_entity;";
+        String order_entity = "DELETE FROM order_entity;";
     }
 
     public static CardsInfo getCardsInfoWithEmptyFields() {

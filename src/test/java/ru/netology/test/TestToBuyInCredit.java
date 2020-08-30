@@ -1,6 +1,7 @@
 package ru.netology.test;
 
 import lombok.val;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.netology.data.DataHelper;
 import ru.netology.page.RequestToBuyInCredit;
@@ -16,9 +17,13 @@ public class TestToBuyInCredit {
         val cardsInfo = DataHelper.getCardsInfoWithApprovedCardToBuyInCredit();
         val successfullyNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithSuccess(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
-        DataHelper.shouldSelectFromDBToBuyInCredit();
+        String status = "APPROVED";
+        String id = "00cef50f-eb03-4234-8f9c-e0eafd7b768d";
+        String payment_id = "a85051a2-b541-4376-a758-c666a9dcf29a";
+        Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuyInCredit(), status);
+        Assertions.assertEquals(DataHelper.shouldSelectIdFromDBToBuyInCredit(), id);
+        Assertions.assertEquals(DataHelper.shouldSelectCredit_idFromDBToBuyInCredit(), payment_id);
         DataHelper.shouldDeleteFromDBToBuyInCredit();
-
     }
 
     @Test
@@ -27,7 +32,12 @@ public class TestToBuyInCredit {
         val cardsInfo = DataHelper.getCardsInfoWithDeclinedCArdToBuyInCredit();
         val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithError(cardsInfo);
         errorNotificationPage.shouldErrorBeVisible();
-        DataHelper.shouldSelectFromDBToBuyInCredit();
+        String status = "APPROVED";
+        String id = "00cef50f-eb03-4234-8f9c-e0eafd7b768d";
+        String payment_id = "a85051a2-b541-4376-a758-c666a9dcf29a";
+        Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuyInCredit(), status);
+        Assertions.assertEquals(DataHelper.shouldSelectIdFromDBToBuyInCredit(), id);
+        Assertions.assertEquals(DataHelper.shouldSelectCredit_idFromDBToBuyInCredit(), payment_id);
         DataHelper.shouldDeleteFromDBToBuyInCredit();
     }
 
