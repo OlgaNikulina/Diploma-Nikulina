@@ -18,8 +18,8 @@ public class TestToBuy {
         val successfullyNotificationPage = requestToBuy.shouldReplenishFormToBuyWithSuccess(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
         String status = "APPROVED";
-        String id = "7e5df235-2880-4733-98a2-8c5903a53052";
-        String payment_id = "0b25c068-147f-4058-9baf-1332607dbedb-";
+        String id = "101c7e58-fac0-4529-8b68-a99a960b56a8";
+        String payment_id = "7d6db491-dd76-4628-b6b4-3fb1472e3d05";
         Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuy(), status);
         Assertions.assertEquals(DataHelper.shouldSelectIdFromDBToBuy(), id);
         Assertions.assertEquals(DataHelper.shouldSelectPayment_IdFromDBToBuy(), payment_id);
@@ -33,8 +33,8 @@ public class TestToBuy {
         val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithError(cardsInfo);
         errorNotificationPage.shouldErrorBeVisible();
         String status = "DECLINED";
-        String id = "57032656-f3ee-400e-be72-bc992790640f";
-        String payment_id = "4d3bff25-2c5a-4a2c-88b9-ef2deb6e3d0c";
+        String id = "4d15edd3-b2aa-4d8f-91ce-2d9711787222";
+        String payment_id = "572d4a83-ce4f-45df-a375-eec20445d30a";
         Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuy(), status);
         Assertions.assertEquals(DataHelper.shouldSelectIdFromDBToBuy(), id);
         Assertions.assertEquals(DataHelper.shouldSelectPayment_IdFromDBToBuy(), payment_id);

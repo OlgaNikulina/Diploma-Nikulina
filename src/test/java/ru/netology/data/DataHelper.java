@@ -53,7 +53,7 @@ public class DataHelper {
                 val idStmt = conn.createStatement();
         ) {
             try (val rs = idStmt.executeQuery(idSQL)) {
-                if (rs.last()) {
+                if (rs.next()) {
                     id = rs.getString("id");
                 }
             }

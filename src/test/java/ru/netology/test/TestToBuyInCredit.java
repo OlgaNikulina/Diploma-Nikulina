@@ -18,11 +18,11 @@ public class TestToBuyInCredit {
         val successfullyNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithSuccess(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
         String status = "APPROVED";
-        String id = "00cef50f-eb03-4234-8f9c-e0eafd7b768d";
-        String payment_id = "a85051a2-b541-4376-a758-c666a9dcf29a";
+        String id = "7e47d111-350a-47cb-a0a4-27c9e4529217";
+        String credit_id = "988e48b8-9fc2-4450-9b32-22daec703e80";
         Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuyInCredit(), status);
         Assertions.assertEquals(DataHelper.shouldSelectIdFromDBToBuyInCredit(), id);
-        Assertions.assertEquals(DataHelper.shouldSelectCredit_idFromDBToBuyInCredit(), payment_id);
+        Assertions.assertEquals(DataHelper.shouldSelectCredit_idFromDBToBuyInCredit(), credit_id);
         DataHelper.shouldDeleteFromDBToBuyInCredit();
     }
 
@@ -32,12 +32,12 @@ public class TestToBuyInCredit {
         val cardsInfo = DataHelper.getCardsInfoWithDeclinedCArdToBuyInCredit();
         val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithError(cardsInfo);
         errorNotificationPage.shouldErrorBeVisible();
-        String status = "APPROVED";
-        String id = "00cef50f-eb03-4234-8f9c-e0eafd7b768d";
-        String payment_id = "a85051a2-b541-4376-a758-c666a9dcf29a";
+        String status = "DECLINED";
+        String id = "8d378206-83c8-4d28-b78a-1c442b155aa9";
+        String credit_id = "0530a9b5-4431-46f0-861f-a8e0e20e9925";
         Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuyInCredit(), status);
         Assertions.assertEquals(DataHelper.shouldSelectIdFromDBToBuyInCredit(), id);
-        Assertions.assertEquals(DataHelper.shouldSelectCredit_idFromDBToBuyInCredit(), payment_id);
+        Assertions.assertEquals(DataHelper.shouldSelectCredit_idFromDBToBuyInCredit(), credit_id);
         DataHelper.shouldDeleteFromDBToBuyInCredit();
     }
 

@@ -23,7 +23,6 @@ public class RequestToBuyInCredit {
         cardHolderField.setValue(info.getName());
         cvvField.setValue(info.getCvv());
         buttonContinue.click();
-        buttonContinue.click();
         return new SuccessfullyNotificationPage();
     }
 
