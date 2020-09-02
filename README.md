@@ -21,8 +21,7 @@
                                                                            spring.datasource.username=app
                                                                            spring.datasource.password=pass
 4. выполнить команду:
-* для СУБД mysql - java -jar artifacts/aqa-shop.jar -P:jdbc.url=jdbc:mysql://192.168.99.100:3306/app -P:jdbc.user=app -P:jdbc.password=pass
-* для postgres - java -jar artifacts/aqa-shop.jar -P:jdbc.url=jdbc:postgresql://192.168.99.100:5432/my_db -P:jdbc.user=app -P:jdbc.password=pass
+java -jar artifacts/aqa-shop.jar 
                                                                           
 5. открыть приложение в браузере на http://localhost:8080
 6. открыть Node.js command prompt, командой cd перейти в каталог /gate-simulator, выполнить команду npm start.
