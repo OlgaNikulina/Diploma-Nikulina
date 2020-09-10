@@ -18,12 +18,13 @@ public class TestToBuyInCredit {
         val successfullyNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithSuccess(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
         String status = "APPROVED";
-        String id = "7e47d111-350a-47cb-a0a4-27c9e4529217";
-        String credit_id = "988e48b8-9fc2-4450-9b32-22daec703e80";
+        String id = "08de9af4-0de7-4aa5-8ff3-9a74c855e469";
+        String credit_id = null;
         Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuyInCredit(), status);
         Assertions.assertEquals(DataHelper.shouldSelectIdFromDBToBuyInCredit(), id);
         Assertions.assertEquals(DataHelper.shouldSelectCredit_idFromDBToBuyInCredit(), credit_id);
-        DataHelper.shouldDeleteFromDBToBuyInCredit();
+        DataHelper.shouldDeleteFromCredit_request_entityToBuyInCredit();
+        DataHelper.shouldDeleteFromOrder_entity();
     }
 
     @Test
@@ -38,7 +39,8 @@ public class TestToBuyInCredit {
         Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuyInCredit(), status);
         Assertions.assertEquals(DataHelper.shouldSelectIdFromDBToBuyInCredit(), id);
         Assertions.assertEquals(DataHelper.shouldSelectCredit_idFromDBToBuyInCredit(), credit_id);
-        DataHelper.shouldDeleteFromDBToBuyInCredit();
+        DataHelper.shouldDeleteFromCredit_request_entityToBuyInCredit();
+        DataHelper.shouldDeleteFromOrder_entity();
     }
 
     @Test
@@ -47,7 +49,8 @@ public class TestToBuyInCredit {
         val cardsInfo = DataHelper.getCardsInfoWithEmptyFields();
         val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithError(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
-        DataHelper.shouldDeleteFromDBToBuyInCredit();
+        DataHelper.shouldDeleteFromCredit_request_entityToBuyInCredit();
+        DataHelper.shouldDeleteFromOrder_entity();
     }
 
     @Test
@@ -56,6 +59,7 @@ public class TestToBuyInCredit {
         val cardsInfo = DataHelper.getCardsInfoWithSingleSymbols();
         val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithError(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
-        DataHelper.shouldDeleteFromDBToBuyInCredit();
+        DataHelper.shouldDeleteFromCredit_request_entityToBuyInCredit();
+        DataHelper.shouldDeleteFromOrder_entity();
     }
 }

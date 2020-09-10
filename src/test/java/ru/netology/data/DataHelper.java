@@ -77,9 +77,14 @@ public class DataHelper {
         return payment_id;
     }
 
-    public static void shouldDeleteFromDBToBuy() {
-        String payment_entity = "DELETE FROM payment_entity;";
-        String order_entity = "DELETE FROM order_entity;";
+    public static String shouldDeleteFromPayment_entityToBuy() {
+        val payment_entity = "DELETE * FROM payment_entity;";
+        return payment_entity;
+    }
+
+    public static String shouldDeleteFromOrder_entity() {
+        val order_entity = "DELETE * FROM order_entity;";
+        return order_entity;
     }
 
     public static CardsInfo getCardsInfoWithApprovedCardToBuyInCredit() {
@@ -140,9 +145,9 @@ public class DataHelper {
         return credit_id;
     }
 
-    public static void shouldDeleteFromDBToBuyInCredit() {
-        String credit_request_entity = "DELETE FROM credit_request_entity;";
-        String order_entity = "DELETE FROM order_entity;";
+    public static String shouldDeleteFromCredit_request_entityToBuyInCredit() {
+        val credit_request_entity = "DELETE * FROM credit_request_entity;";
+        return credit_request_entity;
     }
 
     public static CardsInfo getCardsInfoWithEmptyFields() {

@@ -23,7 +23,8 @@ public class TestToBuy {
         Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuy(), status);
         Assertions.assertEquals(DataHelper.shouldSelectIdFromDBToBuy(), id);
         Assertions.assertEquals(DataHelper.shouldSelectPayment_IdFromDBToBuy(), payment_id);
-        DataHelper.shouldDeleteFromDBToBuy();
+        DataHelper.shouldDeleteFromPayment_entityToBuy();
+        DataHelper.shouldDeleteFromOrder_entity();
     }
 
     @Test
@@ -38,7 +39,9 @@ public class TestToBuy {
         Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuy(), status);
         Assertions.assertEquals(DataHelper.shouldSelectIdFromDBToBuy(), id);
         Assertions.assertEquals(DataHelper.shouldSelectPayment_IdFromDBToBuy(), payment_id);
-        DataHelper.shouldDeleteFromDBToBuy();
+        DataHelper.shouldDeleteFromPayment_entityToBuy();
+        DataHelper.shouldDeleteFromOrder_entity();
+
     }
 
     @Test
@@ -47,7 +50,8 @@ public class TestToBuy {
         val cardsInfo = DataHelper.getCardsInfoWithEmptyFields();
         val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithError(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
-        DataHelper.shouldDeleteFromDBToBuy();
+        DataHelper.shouldDeleteFromPayment_entityToBuy();
+        DataHelper.shouldDeleteFromOrder_entity();
     }
 
     @Test
@@ -56,6 +60,7 @@ public class TestToBuy {
         val cardsInfo = DataHelper.getCardsInfoWithSingleSymbols();
         val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithError(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
-        DataHelper.shouldDeleteFromDBToBuy();
+        DataHelper.shouldDeleteFromPayment_entityToBuy();
+        DataHelper.shouldDeleteFromOrder_entity();
     }
 }
