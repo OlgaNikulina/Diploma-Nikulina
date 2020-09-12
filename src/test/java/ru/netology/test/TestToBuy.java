@@ -6,14 +6,31 @@ import org.junit.jupiter.api.Test;
 import ru.netology.data.DataHelper;
 import ru.netology.page.RequestToBuy;
 
+import javax.xml.transform.sax.SAXResult;
 import java.sql.SQLException;
 
 import static com.codeborne.selenide.Selenide.open;
 
 public class TestToBuy {
+
+    public enum Localhost {
+
+        DEV("http://localhost:8080");
+
+        private final String url;
+
+        Localhost(String url) {
+            this.url = url;
+        }
+
+        public String getUrl() {
+            return url;
+        }
+    }
+
     @Test
     void shouldSendFormWithApprovedCard() throws SQLException {
-        val requestToBuy = open("http://localhost:8080", RequestToBuy.class);
+        val requestToBuy = open(Localhost.DEV.getUrl(), RequestToBuy.class);
         val cardsInfo = DataHelper.getCardsInfoWithApprovedCardToBuy();
         val successfullyNotificationPage = requestToBuy.shouldReplenishFormToBuyWithSuccess(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();

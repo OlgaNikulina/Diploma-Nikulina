@@ -100,6 +100,8 @@ public class DataHelper {
     public static String shouldSelectStatusFromDBToBuyInCredit() throws SQLException {
         val statusSQL = "SELECT status FROM credit_request_entity order by created ASC limit 1;";
         String status = "";
+        -Ddb.url
+        System.getProperty("db.url");
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
                 val statusStmt = conn.createStatement();

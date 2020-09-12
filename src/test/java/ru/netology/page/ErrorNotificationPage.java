@@ -1,11 +1,11 @@
 package ru.netology.page;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
 public class ErrorNotificationPage {
     private SelenideElement cardNumberFieldSub = $("div > form > fieldset > div:nth-child(1) > span > span > span.input__sub" );
