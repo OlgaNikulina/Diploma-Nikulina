@@ -5,26 +5,25 @@ import ru.netology.data.DataHelper;
 public class RequestToBuy {
     private PaymentForm paymentForm;
 
-
     public SuccessfullyNotificationPage shouldReplenishFormToBuyWithSuccess(DataHelper.CardsInfo info) {
-        buttonToBuy.click();
-        cardNumberField.setValue(info.getCardNumber());
-        monthField.setValue(info.getMonth());
-        yearField.setValue(info.getYear());
-        cardHolderField.setValue(info.getName());
-        cvvField.setValue(info.getCvv());
-        buttonContinue.click();
+        paymentForm.getButtonToBuy().click();
+        paymentForm.getCardNumberField().setValue(info.getCardNumber());
+        paymentForm.getMonthField().setValue(info.getMonth());
+        paymentForm.getYearField().setValue(info.getYear());
+        paymentForm.getCardHolderField().setValue(info.getName());
+        paymentForm.getCvvField().setValue(info.getCvv());
+        paymentForm.getButtonContinue().click();
         return new SuccessfullyNotificationPage();
     }
 
     public ErrorNotificationPage shouldReplenishFormToBuyWithError(DataHelper.CardsInfo info) {
-        buttonToBuy.click();
-        cardNumberField.setValue(info.getCardNumber());
-        monthField.setValue(info.getMonth());
-        yearField.setValue(info.getYear());
-        cardHolderField.setValue(info.getName());
-        cvvField.setValue(info.getCvv());
-        buttonContinue.click();
+        paymentForm.getButtonToBuy().click();
+        paymentForm.getCardNumberField().setValue(info.getCardNumber());
+        paymentForm.getMonthField().setValue(info.getMonth());
+        paymentForm.getYearField().setValue(info.getYear());
+        paymentForm.getCardHolderField().setValue(info.getName());
+        paymentForm.getCvvField().setValue(info.getCvv());
+        paymentForm.getButtonContinue().click();
         return new ErrorNotificationPage();
     }
 }

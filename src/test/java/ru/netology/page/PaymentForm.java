@@ -20,4 +20,60 @@ public class PaymentForm {
     private SelenideElement cardHolderFieldInCredit =  $x("//*[@type='text' and not(@placeholder)]");
     private SelenideElement cvvFieldInCredit = $("[placeholder='999']");
     private SelenideElement buttonContinueInCredit = $$("span.button__text" ).find(exactText("Продолжить" ));
+
+    public SelenideElement getButtonToBuy() {
+        return buttonToBuy;
+    }
+
+    public SelenideElement getCardNumberField() {
+        return cardNumberField;
+    }
+
+    public SelenideElement getMonthField() {
+        return monthField;
+    }
+
+    public SelenideElement getYearField() {
+        return yearField;
+    }
+
+    public SelenideElement getCardHolderField() {
+        return cardHolderField;
+    }
+
+    public SelenideElement getCvvField() {
+        return cvvField;
+    }
+
+    public SelenideElement getButtonContinue() {
+        return buttonContinue;
+    }
+
+    public SelenideElement getBuyInCredit() {
+        return buyInCredit;
+    }
+
+    public SelenideElement getCardNumberFieldInCredit() {
+        return cardNumberFieldInCredit;
+    }
+
+    public SelenideElement getMonthFieldInCredit() {
+        return monthFieldInCredit;
+    }
+
+    public SelenideElement getYearFieldInCredit() {
+        return yearFieldInCredit;
+    }
+
+    public SelenideElement getCardHolderFieldInCredit() {
+        return cardHolderFieldInCredit;
+    }
+
+    public SelenideElement getCvvFieldInCredit() {
+        return cvvFieldInCredit;
+    }
+
+    public SelenideElement getButtonContinueInCredit() {
+        return buttonContinueInCredit;
+    }
 }

@@ -3,8 +3,10 @@ package ru.netology.data;
 import lombok.Value;
 import lombok.val;
 
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class DataHelper {
     private DataHelper() {
@@ -77,9 +79,23 @@ public class DataHelper {
         return payment_id;
     }
 
-    public static String shouldDeleteFromPayment_entityToBuy() {
-        val payment_entity = "DELETE * FROM payment_entity;";
-        return payment_entity;
+    public static void shouldDeleteFromPayment_entityToBuy() {
+        Connection connection = null;
+        Statement statement = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
+            statement = connection.createStatement();
+            statement.execute("DELETE FROM payment_entity");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public static String shouldDeleteFromOrder_entity() {
@@ -100,7 +116,6 @@ public class DataHelper {
     public static String shouldSelectStatusFromDBToBuyInCredit() throws SQLException {
         val statusSQL = "SELECT status FROM credit_request_entity order by created ASC limit 1;";
         String status = "";
-        -Ddb.url
         System.getProperty("db.url");
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
