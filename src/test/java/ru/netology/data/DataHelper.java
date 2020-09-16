@@ -35,7 +35,7 @@ public class DataHelper {
         val statusSQL = "SELECT status FROM payment_entity order by created ASC limit 1;";
         String status = "";
         try (
-                val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
+                val conn = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
                 val statusStmt = conn.createStatement();
         ) {
             try (val rs = statusStmt.executeQuery(statusSQL)) {
@@ -51,7 +51,7 @@ public class DataHelper {
         val idSQL = "SELECT id FROM order_entity oe order by created asc LIMIT 1;";
         String id = "";
         try (
-                val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
+                val conn = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
                 val idStmt = conn.createStatement();
         ) {
             try (val rs = idStmt.executeQuery(idSQL)) {
@@ -67,7 +67,7 @@ public class DataHelper {
         val payment_idSQL = "SELECT payment_id FROM order_entity limit 1;";
         String payment_id = "";
         try (
-                val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
+                val conn = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
                 val payment_idStmt = conn.createStatement()
         ) {
             try (val rs = payment_idStmt.executeQuery(payment_idSQL)) {
@@ -83,7 +83,7 @@ public class DataHelper {
         Connection connection = null;
         Statement statement = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
+            connection = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
             statement = connection.createStatement();
             statement.execute("DELETE FROM payment_entity");
         } catch (SQLException e) {
@@ -116,9 +116,8 @@ public class DataHelper {
     public static String shouldSelectStatusFromDBToBuyInCredit() throws SQLException {
         val statusSQL = "SELECT status FROM credit_request_entity order by created ASC limit 1;";
         String status = "";
-        System.getProperty("db.url");
         try (
-                val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
+                val conn = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
                 val statusStmt = conn.createStatement();
         ) {
             try (val rs = statusStmt.executeQuery(statusSQL)) {
@@ -134,7 +133,7 @@ public class DataHelper {
         val idSQL = "SELECT id FROM order_entity limit 1;";
         String id = "";
         try (
-                val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
+                val conn = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
                 val idStmt = conn.createStatement();
         ) {
             try (val rs = idStmt.executeQuery(idSQL)) {
@@ -150,7 +149,7 @@ public class DataHelper {
         val credit_idSQL = "SELECT credit_id FROM order_entity limit 1;";
         String credit_id = "";
         try (
-                val conn = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/app", "app", "pass");
+                val conn = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
                 val credit_idStmt = conn.createStatement()
         ) {
             try (val rs = credit_idStmt.executeQuery(credit_idSQL)) {

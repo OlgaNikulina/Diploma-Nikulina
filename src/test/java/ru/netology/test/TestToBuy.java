@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import ru.netology.data.DataHelper;
 import ru.netology.page.RequestToBuy;
 
-import javax.xml.transform.sax.SAXResult;
 import java.sql.SQLException;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -46,7 +45,7 @@ public class TestToBuy {
 
     @Test
     void shouldSendFormWithDeclinedCard() throws SQLException {
-        val requestToBuy = open("http://localhost:8080", RequestToBuy.class);
+        val requestToBuy = open(Localhost.DEV.getUrl(), RequestToBuy.class);
         val cardsInfo = DataHelper.getCardsInfoWithDeclinedCardToBuy();
         val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithError(cardsInfo);
         errorNotificationPage.shouldErrorBeVisible();
@@ -63,7 +62,7 @@ public class TestToBuy {
 
     @Test
     void shouldNotSendFormWithEmptyFields() {
-        val requestToBuy = open("http://localhost:8080", RequestToBuy.class);
+        val requestToBuy = open(Localhost.DEV.getUrl(), RequestToBuy.class);
         val cardsInfo = DataHelper.getCardsInfoWithEmptyFields();
         val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithError(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
@@ -73,7 +72,7 @@ public class TestToBuy {
 
     @Test
     void shouldNotSendFormWithSingleSymbols() {
-        val requestToBuy = open("http://localhost:8080", RequestToBuy.class);
+        val requestToBuy = open(Localhost.DEV.getUrl(), RequestToBuy.class);
         val cardsInfo = DataHelper.getCardsInfoWithSingleSymbols();
         val errorNotificationPage = requestToBuy.shouldReplenishFormToBuyWithError(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();

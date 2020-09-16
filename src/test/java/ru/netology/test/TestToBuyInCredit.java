@@ -11,9 +11,25 @@ import java.sql.SQLException;
 import static com.codeborne.selenide.Selenide.open;
 
 public class TestToBuyInCredit {
+
+    public enum Localhost {
+
+        DEV("http://localhost:8080");
+
+        private final String url;
+
+        Localhost(String url) {
+            this.url = url;
+        }
+
+        public String getUrl() {
+            return url;
+        }
+    }
+
     @Test
     void shouldSendFormWithApprovedCard() throws SQLException {
-        val requestToBuyInCredit = open("http://localhost:8080", RequestToBuyInCredit.class);
+        val requestToBuyInCredit = open(Localhost.DEV.getUrl(), RequestToBuyInCredit.class);
         val cardsInfo = DataHelper.getCardsInfoWithApprovedCardToBuyInCredit();
         val successfullyNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithSuccess(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
@@ -29,7 +45,7 @@ public class TestToBuyInCredit {
 
     @Test
     void shouldSendFormWithDeclinedCard() throws SQLException {
-        val requestToBuyInCredit = open("http://localhost:8080", RequestToBuyInCredit.class);
+        val requestToBuyInCredit = open(Localhost.DEV.getUrl(), RequestToBuyInCredit.class);
         val cardsInfo = DataHelper.getCardsInfoWithDeclinedCArdToBuyInCredit();
         val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithError(cardsInfo);
         errorNotificationPage.shouldErrorBeVisible();
@@ -45,7 +61,7 @@ public class TestToBuyInCredit {
 
     @Test
     void shouldNotSendFormWithEmptyFields() {
-        val requestToBuyInCredit = open("http://localhost:8080", RequestToBuyInCredit.class);
+        val requestToBuyInCredit = open(Localhost.DEV.getUrl(), RequestToBuyInCredit.class);
         val cardsInfo = DataHelper.getCardsInfoWithEmptyFields();
         val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithError(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
@@ -55,7 +71,7 @@ public class TestToBuyInCredit {
 
     @Test
     void shouldNotSendFormWithSingleSymbols() {
-        val requestToBuyInCredit = open("http://localhost:8080", RequestToBuyInCredit.class);
+        val requestToBuyInCredit = open(Localhost.DEV.getUrl(), RequestToBuyInCredit.class);
         val cardsInfo = DataHelper.getCardsInfoWithSingleSymbols();
         val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithError(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
