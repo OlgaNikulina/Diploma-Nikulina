@@ -98,9 +98,23 @@ public class DataHelper {
         }
     }
 
-    public static String shouldDeleteFromOrder_entity() {
-        val order_entity = "DELETE * FROM order_entity;";
-        return order_entity;
+    public static void shouldDeleteFromOrder_entity() {
+        Connection connection = null;
+        Statement statement = null;
+        try {
+            connection = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
+            statement = connection.createStatement();
+            statement.execute("DELETE FROM order_entity;");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public static CardsInfo getCardsInfoWithApprovedCardToBuyInCredit() {
@@ -161,9 +175,23 @@ public class DataHelper {
         return credit_id;
     }
 
-    public static String shouldDeleteFromCredit_request_entityToBuyInCredit() {
-        val credit_request_entity = "DELETE * FROM credit_request_entity;";
-        return credit_request_entity;
+    public static void shouldDeleteFromCredit_request_entityToBuyInCredit() {
+        Connection connection = null;
+        Statement statement = null;
+        try {
+            connection = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
+            statement = connection.createStatement();
+            statement.execute("DELETE FROM credit_request_entity;");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public static CardsInfo getCardsInfoWithEmptyFields() {
