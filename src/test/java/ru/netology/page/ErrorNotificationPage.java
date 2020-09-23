@@ -8,11 +8,12 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class ErrorNotificationPage {
-    private SelenideElement cardNumberFieldSub = $("div > form > fieldset > div:nth-child(1) > span > span > span.input__sub" );
-    private SelenideElement monthFieldSub = $("div > form > fieldset > div:nth-child(2) > span > span:nth-child(1) > span > span > span.input__sub");
-    private SelenideElement yearFieldSub = $("div > form > fieldset > div:nth-child(2) > span > span:nth-child(2) > span > span > span.input__sub" );
+    private SelenideElement cardNumberFieldSub1 = $("div:nth-child(1) > span > span > span.input__sub" );
+    private SelenideElement cardNumberFieldSub = $("[placeholder='0000 0000 0000 0000'] .input__sub");
+    private SelenideElement monthFieldSub = $("div:nth-child(2) > span > span:nth-child(1) > span > span > span.input__sub");
+    private SelenideElement yearFieldSub = $("div:nth-child(2) > span > span:nth-child(2) > span > span > span.input__sub" );
     private SelenideElement cardHolderFieldSub = $("div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__sub" );
-    private SelenideElement cvvFieldSub = $("div > form > fieldset > div:nth-child(3) > span > span:nth-child(2) > span > span > span.input__sub" );
+    private SelenideElement cvvFieldSub = $("div:nth-child(3) > span > span:nth-child(2) > span > span > span.input__sub" );
     private SelenideElement errorNotification = $$("div.notification__title" ).find(exactText("Ошибка" ));
 
     public void shouldErrorNotificationBeVisible() {
