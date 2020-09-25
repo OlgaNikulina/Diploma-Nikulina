@@ -3,7 +3,7 @@ package ru.netology.page;
 import ru.netology.data.DataHelper;
 
 public class RequestToBuy {
-    PaymentForm paymentForm;
+    PaymentForm paymentForm = new PaymentForm();
 
     public SuccessfullyNotificationPage shouldReplenishFormToBuyWithSuccess(DataHelper.CardsInfo info) {
         paymentForm.getButtonToBuy().click();

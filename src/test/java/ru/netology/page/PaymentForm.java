@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PaymentForm {
-    private SelenideElement buttonToBuy = $((WebElement) exactText("Купить"));
+    private SelenideElement buttonToBuy =  $$("span.button__text" ).find(exactText("Купить" ));
     private SelenideElement cardNumberField = $("[placeholder='0000 0000 0000 0000']");
     private SelenideElement monthField = $("[placeholder='08']");
     private SelenideElement yearField = $("[placeholder='22']");
