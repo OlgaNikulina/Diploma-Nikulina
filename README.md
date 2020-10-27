@@ -20,9 +20,7 @@
                                                                            spring.datasource.url=jdbc:postgresql://192.168.99.100:5432/my_db
                                                                            spring.datasource.username=app
                                                                            spring.datasource.password=pass
-4. выполнить команду:
-java -jar artifacts/aqa-shop.jar 
-                                                                          
+4. выполнить команду: java -jar artifacts/aqa-shop.jar                                                                           
 5. открыть приложение в браузере на http://localhost:8080
 6. открыть Node.js command prompt, командой cd перейти в каталог /gate-simulator, выполнить команду npm start
-7. при запуске тестов gradlew test -Ddb.url="jdbc:mysql://192.168.99.100:3306/app"
+7. для запуска тестов выполнить команду gradlew test -Ddb.url="jdbc:mysql://192.168.99.100:3306/app"
