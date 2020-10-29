@@ -10,8 +10,8 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class ErrorNotificationPage {
-    private SelenideElement cardNumberFieldSub2 = $("div:nth-child(1) > span > span > span.input__sub" );
-    private SelenideElement cardNumberFieldSub = $(By.xpath("[@class='email']/..//following-sibling::span.input__sub"));
+    private SelenideElement cardNumberFieldSub = $("div:nth-child(1) > span > span > span.input__sub" );
+    private SelenideElement cardNumberFieldSub6 = $(By.xpath("[@class='email']/..//following-sibling::span.input__sub"));
     private SelenideElement cardNumberFieldSub1 = $("[placeholder='0000 0000 0000 0000'] .input__sub");
     private SelenideElement monthFieldSub = $("div:nth-child(2) > span > span:nth-child(1) > span > span > span.input__sub");
     private SelenideElement yearFieldSub = $("div:nth-child(2) > span > span:nth-child(2) > span > span > span.input__sub" );
