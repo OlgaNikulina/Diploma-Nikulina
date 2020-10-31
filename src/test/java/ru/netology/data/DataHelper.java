@@ -32,7 +32,7 @@ public class DataHelper {
     }
 
     public static String shouldSelectStatusFromDBToBuy() throws SQLException {
-        val statusSQL = "SELECT status FROM payment_entity order by created ASC limit 1;";
+        val statusSQL = "SELECT status FROM payment_entity limit 1;";
         String status = "";
         try (
                 val conn = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
@@ -48,7 +48,7 @@ public class DataHelper {
     }
 
     public static String shouldSelectIdFromDBToBuy() throws SQLException {
-        val idSQL = "SELECT id FROM order_entity oe order by created asc LIMIT 1;";
+        val idSQL = "SELECT id FROM order_entity LIMIT 1;";
         String id = "";
         try (
                 val conn = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
@@ -128,7 +128,7 @@ public class DataHelper {
     }
 
     public static String shouldSelectStatusFromDBToBuyInCredit() throws SQLException {
-        val statusSQL = "SELECT status FROM credit_request_entity order by created ASC limit 1;";
+        val statusSQL = "SELECT status FROM credit_request_entity limit 1;";
         String status = "";
         try (
                 val conn = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
