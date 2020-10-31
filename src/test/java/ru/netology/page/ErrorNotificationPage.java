@@ -10,13 +10,11 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class ErrorNotificationPage {
-    private SelenideElement cardNumberFieldSub2 = $("div:nth-child(1) > span > span > span.input__sub" );
-    private SelenideElement cardNumberFieldSub = $(By.xpath("[@class='email']//following-sibling::span"));
-    private SelenideElement cardNumberFieldSub1 = $("[placeholder='0000 0000 0000 0000'] .input__sub");
-    private SelenideElement monthFieldSub = $("div:nth-child(2) > span > span:nth-child(1) > span > span > span.input__sub");
-    private SelenideElement yearFieldSub = $("div:nth-child(2) > span > span:nth-child(2) > span > span > span.input__sub" );
-    private SelenideElement cardHolderFieldSub = $("div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__sub" );
-    private SelenideElement cvvFieldSub = $("div:nth-child(3) > span > span:nth-child(2) > span > span > span.input__sub" );
+    private SelenideElement cardNumberFieldSub = $x("//*[@placeholder='0000 0000 0000 0000']/parent::span/following-sibling::span");
+    private SelenideElement monthFieldSub = $x("//*[@placeholder='08']/parent::span/following-sibling::span");
+    private SelenideElement yearFieldSub = $x("//*[@placeholder='22']/parent::span/following-sibling::span" );
+    private SelenideElement cardHolderFieldSub = $x("//*[@type='text' and not(@placeholder)]/parent::span/following-sibling::span" );
+    private SelenideElement cvvFieldSub = $x("//*[@placeholder='999']/parent::span/following-sibling::span" );
     private SelenideElement errorNotification = $$("div.notification__title" ).find(exactText("Ошибка" ));
 
     public void shouldErrorNotificationBeVisible() {
