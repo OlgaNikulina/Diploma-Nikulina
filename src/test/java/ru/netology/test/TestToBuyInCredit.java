@@ -34,7 +34,7 @@ public class TestToBuyInCredit {
         val successfullyNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithSuccess(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
         String status = "APPROVED";
-        String id = "08de9af4-0de7-4aa5-8ff3-9a74c855e469";
+        String id = "0968cd26-b715-497e-a39c-b0b1e3bcc5f9";
         String credit_id = null;
         Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuyInCredit(), status);
         Assertions.assertEquals(DataHelper.shouldSelectIdFromDBToBuyInCredit(), id);

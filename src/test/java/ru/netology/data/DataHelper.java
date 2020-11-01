@@ -48,7 +48,7 @@ public class DataHelper {
     }
 
     public static String shouldSelectIdFromDBToBuy() throws SQLException {
-        val idSQL = "SELECT id FROM order_entity LIMIT 1;";
+        val idSQL = "SELECT id FROM order_entity limit 1;";
         String id = "";
         try (
                 val conn = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");

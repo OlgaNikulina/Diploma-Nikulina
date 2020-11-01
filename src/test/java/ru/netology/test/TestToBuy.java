@@ -34,8 +34,8 @@ public class TestToBuy {
         val successfullyNotificationPage = requestToBuy.shouldReplenishFormToBuyWithSuccess(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
         String status = "APPROVED";
-        String id = "a879da92-f237-4d07-820c-cb95a596982e";
-        String payment_id = "20fdde4c-00f5-482b-acb7-476ba36448f1";
+        String id = "0968cd26-b715-497e-a39c-b0b1e3bcc5f9";
+        String payment_id = "31a2a064-6392-431d-bc56-e693d7b08871";
         Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuy(), status);
         Assertions.assertEquals(DataHelper.shouldSelectIdFromDBToBuy(), id);
         Assertions.assertEquals(DataHelper.shouldSelectPayment_IdFromDBToBuy(), payment_id);
