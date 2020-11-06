@@ -4,7 +4,7 @@ import lombok.val;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.netology.data.DataHelper;
-import ru.netology.page.RequestToBuyInCredit;
+import ru.netology.page.Replenishment;
 
 import java.sql.SQLException;
 
@@ -29,9 +29,9 @@ public class TestToBuyInCredit {
 
     @Test
     void shouldSendFormWithApprovedCard() throws SQLException {
-        val requestToBuyInCredit = open(Localhost.DEV.getUrl(), RequestToBuyInCredit.class);
+        val replenishment = open(Localhost.DEV.getUrl(), Replenishment.class);
         val cardsInfo = DataHelper.getCardsInfoWithApprovedCardToBuyInCredit();
-        val successfullyNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithSuccess(cardsInfo);
+        val successfullyNotificationPage = replenishment.shouldReplenishFormToBuyInCreditWithSuccess(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
         String status = "APPROVED";
         String id = "20650ed5-37a9-4648-8132-a173779720ab";
@@ -45,9 +45,9 @@ public class TestToBuyInCredit {
 
     @Test
     void shouldSendFormWithDeclinedCard() throws SQLException {
-        val requestToBuyInCredit = open(Localhost.DEV.getUrl(), RequestToBuyInCredit.class);
+        val replenishment = open(Localhost.DEV.getUrl(), Replenishment.class);
         val cardsInfo = DataHelper.getCardsInfoWithDeclinedCArdToBuyInCredit();
-        val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithError(cardsInfo);
+        val errorNotificationPage = replenishment.shouldReplenishFormToBuyInCreditWithError(cardsInfo);
         errorNotificationPage.shouldErrorBeVisible();
         String status = "DECLINED";
         String id = "8d378206-83c8-4d28-b78a-1c442b155aa9";
@@ -61,9 +61,9 @@ public class TestToBuyInCredit {
 
     @Test
     void shouldNotSendFormWithEmptyFields() {
-        val requestToBuyInCredit = open(Localhost.DEV.getUrl(), RequestToBuyInCredit.class);
+        val replenishment = open(Localhost.DEV.getUrl(), Replenishment.class);
         val cardsInfo = DataHelper.getCardsInfoWithEmptyFields();
-        val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithError(cardsInfo);
+        val errorNotificationPage = replenishment.shouldReplenishFormToBuyInCreditWithError(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
         DataHelper.shouldDeleteFromCredit_request_entityToBuyInCredit();
         DataHelper.shouldDeleteFromOrder_entity();
@@ -71,9 +71,9 @@ public class TestToBuyInCredit {
 
     @Test
     void shouldNotSendFormWithSingleSymbols() {
-        val requestToBuyInCredit = open(Localhost.DEV.getUrl(), RequestToBuyInCredit.class);
+        val replenishment = open(Localhost.DEV.getUrl(), Replenishment.class);
         val cardsInfo = DataHelper.getCardsInfoWithSingleSymbols();
-        val errorNotificationPage = requestToBuyInCredit.shouldReplenishFormToBuyInCreditWithError(cardsInfo);
+        val errorNotificationPage = replenishment.shouldReplenishFormToBuyInCreditWithError(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
         DataHelper.shouldDeleteFromCredit_request_entityToBuyInCredit();
         DataHelper.shouldDeleteFromOrder_entity();
