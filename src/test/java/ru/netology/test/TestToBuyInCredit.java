@@ -23,7 +23,7 @@ public class TestToBuyInCredit {
         String credit_id = null;
         Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuyInCredit(), status);
         Assertions.assertEquals(DataHelper.shouldSelectIdFromDBToBuyInCredit(), id);
-        Assertions.assertEquals(DataHelper.shouldSelectCredit_idFromDBToBuyInCredit(), credit_id);
+        Assertions.assertNull(DataHelper.shouldSelectCredit_idFromDBToBuyInCredit());
         DataHelper.shouldDeleteFromCredit_request_entityToBuyInCredit();
         DataHelper.shouldDeleteFromOrder_entity();
     }
@@ -36,10 +36,9 @@ public class TestToBuyInCredit {
         errorNotificationPage.shouldErrorBeVisible();
         String status = "DECLINED";
         String id = "8d378206-83c8-4d28-b78a-1c442b155aa9";
-        String credit_id = "0530a9b5-4431-46f0-861f-a8e0e20e9925";
         Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuyInCredit(), status);
         Assertions.assertEquals(DataHelper.shouldSelectIdFromDBToBuyInCredit(), id);
-        Assertions.assertEquals(DataHelper.shouldSelectCredit_idFromDBToBuyInCredit(), credit_id);
+        Assertions.assertNull(DataHelper.shouldSelectCredit_idFromDBToBuyInCredit());
         DataHelper.shouldDeleteFromCredit_request_entityToBuyInCredit();
         DataHelper.shouldDeleteFromOrder_entity();
     }
