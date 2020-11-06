@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import static com.codeborne.selenide.Selenide.open;
 
 public class TestToBuyInCredit {
+    String approvedStatus = "APPROVED";
+    String declinedStatus = "DECLINED";
 
     @Test
     void shouldSendFormWithApprovedCard() throws SQLException {
@@ -18,10 +20,8 @@ public class TestToBuyInCredit {
         val cardsInfo = DataHelper.getCardsInfoWithApprovedCardToBuyInCredit();
         val successfullyNotificationPage = replenishment.shouldReplenishFormToBuyInCreditWithSuccess(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
-        String status = "APPROVED";
         String id = "20650ed5-37a9-4648-8132-a173779720ab";
-        String credit_id = null;
-        Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuyInCredit(), status);
+        Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuyInCredit(), approvedStatus);
         Assertions.assertEquals(DataHelper.shouldSelectIdFromDBToBuyInCredit(), id);
         Assertions.assertNull(DataHelper.shouldSelectCredit_idFromDBToBuyInCredit());
         DataHelper.shouldDeleteFromCredit_request_entityToBuyInCredit();
@@ -34,9 +34,8 @@ public class TestToBuyInCredit {
         val cardsInfo = DataHelper.getCardsInfoWithDeclinedCArdToBuyInCredit();
         val errorNotificationPage = replenishment.shouldReplenishFormToBuyInCreditWithError(cardsInfo);
         errorNotificationPage.shouldErrorBeVisible();
-        String status = "DECLINED";
         String id = "8d378206-83c8-4d28-b78a-1c442b155aa9";
-        Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuyInCredit(), status);
+        Assertions.assertEquals(DataHelper.shouldSelectStatusFromDBToBuyInCredit(), declinedStatus);
         Assertions.assertEquals(DataHelper.shouldSelectIdFromDBToBuyInCredit(), id);
         Assertions.assertNull(DataHelper.shouldSelectCredit_idFromDBToBuyInCredit());
         DataHelper.shouldDeleteFromCredit_request_entityToBuyInCredit();
