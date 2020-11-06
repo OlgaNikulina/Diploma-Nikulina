@@ -12,6 +12,8 @@ public class DataHelper {
     private DataHelper() {
     }
 
+    public static String dbURL = System.getProperty("db.url");
+
     public enum Localhost {
 
         DEV("http://localhost:8080");
@@ -50,7 +52,7 @@ public class DataHelper {
         val statusSQL = "SELECT status FROM payment_entity limit 1;";
         String status = "";
         try (
-                val conn = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
+                val conn = DriverManager.getConnection(dbURL, "app", "pass");
                 val statusStmt = conn.createStatement();
         ) {
             try (val rs = statusStmt.executeQuery(statusSQL)) {
@@ -66,7 +68,7 @@ public class DataHelper {
         val idSQL = "SELECT id FROM order_entity limit 1;";
         String id = "";
         try (
-                val conn = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
+                val conn = DriverManager.getConnection(dbURL, "app", "pass");
                 val idStmt = conn.createStatement();
         ) {
             try (val rs = idStmt.executeQuery(idSQL)) {
@@ -82,7 +84,7 @@ public class DataHelper {
         val payment_idSQL = "SELECT payment_id FROM order_entity limit 1;";
         String payment_id = "";
         try (
-                val conn = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
+                val conn = DriverManager.getConnection(dbURL, "app", "pass");
                 val payment_idStmt = conn.createStatement()
         ) {
             try (val rs = payment_idStmt.executeQuery(payment_idSQL)) {
@@ -98,7 +100,7 @@ public class DataHelper {
         Connection connection = null;
         Statement statement = null;
         try {
-            connection = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
+            connection = DriverManager.getConnection(dbURL, "app", "pass");
             statement = connection.createStatement();
             statement.execute("DELETE FROM payment_entity");
         } catch (SQLException e) {
@@ -117,7 +119,7 @@ public class DataHelper {
         Connection connection = null;
         Statement statement = null;
         try {
-            connection = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
+            connection = DriverManager.getConnection(dbURL, "app", "pass");
             statement = connection.createStatement();
             statement.execute("DELETE FROM order_entity;");
         } catch (SQLException e) {
@@ -146,7 +148,7 @@ public class DataHelper {
         val statusSQL = "SELECT status FROM credit_request_entity limit 1;";
         String status = "";
         try (
-                val conn = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
+                val conn = DriverManager.getConnection(dbURL, "app", "pass");
                 val statusStmt = conn.createStatement();
         ) {
             try (val rs = statusStmt.executeQuery(statusSQL)) {
@@ -162,7 +164,7 @@ public class DataHelper {
         val idSQL = "SELECT id FROM order_entity limit 1;";
         String id = "";
         try (
-                val conn = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
+                val conn = DriverManager.getConnection(dbURL, "app", "pass");
                 val idStmt = conn.createStatement();
         ) {
             try (val rs = idStmt.executeQuery(idSQL)) {
@@ -178,7 +180,7 @@ public class DataHelper {
         val credit_idSQL = "SELECT credit_id FROM order_entity limit 1;";
         String credit_id = "";
         try (
-                val conn = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
+                val conn = DriverManager.getConnection(dbURL, "app", "pass");
                 val credit_idStmt = conn.createStatement()
         ) {
             try (val rs = credit_idStmt.executeQuery(credit_idSQL)) {
@@ -194,7 +196,7 @@ public class DataHelper {
         Connection connection = null;
         Statement statement = null;
         try {
-            connection = DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
+            connection = DriverManager.getConnection(dbURL, "app", "pass");
             statement = connection.createStatement();
             statement.execute("DELETE FROM credit_request_entity;");
         } catch (SQLException e) {
