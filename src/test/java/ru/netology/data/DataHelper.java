@@ -2,6 +2,8 @@ package ru.netology.data;
 
 import lombok.Value;
 import lombok.val;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -36,6 +38,66 @@ public class DataHelper {
         private String year;
         private String name;
         private String cvv;
+    }
+
+    @BeforeAll
+    public static void shouldDeleteFromPayment_entityToBuy() {
+        Connection connection = null;
+        Statement statement = null;
+        try {
+            connection = DriverManager.getConnection(dbURL, "app", "pass");
+            statement = connection.createStatement();
+            statement.execute("DELETE FROM payment_entity");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @BeforeAll
+    public static void shouldDeleteFromOrder_entity() {
+        Connection connection = null;
+        Statement statement = null;
+        try {
+            connection = DriverManager.getConnection(dbURL, "app", "pass");
+            statement = connection.createStatement();
+            statement.execute("DELETE FROM order_entity;");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @BeforeAll
+    public static void shouldDeleteFromCredit_request_entityToBuyInCredit() {
+        Connection connection = null;
+        Statement statement = null;
+        try {
+            connection = DriverManager.getConnection(dbURL, "app", "pass");
+            statement = connection.createStatement();
+            statement.execute("DELETE FROM credit_request_entity;");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public static CardsInfo getCardsInfoWithApprovedCardToBuy() {
@@ -96,44 +158,6 @@ public class DataHelper {
         return payment_id;
     }
 
-    public static void shouldDeleteFromPayment_entityToBuy() {
-        Connection connection = null;
-        Statement statement = null;
-        try {
-            connection = DriverManager.getConnection(dbURL, "app", "pass");
-            statement = connection.createStatement();
-            statement.execute("DELETE FROM payment_entity");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                statement.close();
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public static void shouldDeleteFromOrder_entity() {
-        Connection connection = null;
-        Statement statement = null;
-        try {
-            connection = DriverManager.getConnection(dbURL, "app", "pass");
-            statement = connection.createStatement();
-            statement.execute("DELETE FROM order_entity;");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                statement.close();
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
     public static CardsInfo getCardsInfoWithApprovedCardToBuyInCredit() {
 
         return new CardsInfo("4444 4444 4444 4441", "08", "22", "Alex", "999");
@@ -190,25 +214,6 @@ public class DataHelper {
             }
         }
         return credit_id;
-    }
-
-    public static void shouldDeleteFromCredit_request_entityToBuyInCredit() {
-        Connection connection = null;
-        Statement statement = null;
-        try {
-            connection = DriverManager.getConnection(dbURL, "app", "pass");
-            statement = connection.createStatement();
-            statement.execute("DELETE FROM credit_request_entity;");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                statement.close();
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     public static CardsInfo getCardsInfoWithEmptyFields() {
