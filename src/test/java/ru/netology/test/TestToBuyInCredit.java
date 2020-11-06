@@ -12,7 +12,6 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestToBuyInCredit {
 
-
     @Test
     void shouldSendFormWithApprovedCard() throws SQLException {
         val replenishment = open(DataHelper.Localhost.DEV.getUrl(), Replenishment.class);
