@@ -12,24 +12,9 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestToBuy {
 
-    public enum Localhost {
-
-        DEV("http://localhost:8080");
-
-        private final String url;
-
-        Localhost(String url) {
-            this.url = url;
-        }
-
-        public String getUrl() {
-            return url;
-        }
-    }
-
     @Test
     void shouldSendFormWithApprovedCard() throws SQLException {
-        val replenishment = open(Localhost.DEV.getUrl(), Replenishment.class);
+        val replenishment = open(DataHelper.Localhost.DEV.getUrl(), Replenishment.class);
         val cardsInfo = DataHelper.getCardsInfoWithApprovedCardToBuy();
         val successfullyNotificationPage = replenishment.shouldReplenishFormToBuyWithSuccess(cardsInfo);
         successfullyNotificationPage.shouldSuccessfullyNotificationBeVisible();
@@ -45,7 +30,7 @@ public class TestToBuy {
 
     @Test
     void shouldSendFormWithDeclinedCard() throws SQLException {
-        val replenishment = open(Localhost.DEV.getUrl(), Replenishment.class);
+        val replenishment = open(DataHelper.Localhost.DEV.getUrl(), Replenishment.class);
         val cardsInfo = DataHelper.getCardsInfoWithDeclinedCardToBuy();
         val errorNotificationPage = replenishment.shouldReplenishFormToBuyWithError(cardsInfo);
         errorNotificationPage.shouldErrorBeVisible();
@@ -62,7 +47,7 @@ public class TestToBuy {
 
     @Test
     void shouldNotSendFormWithEmptyFields() {
-        val replenishment = open(Localhost.DEV.getUrl(), Replenishment.class);
+        val replenishment = open(DataHelper.Localhost.DEV.getUrl(), Replenishment.class);
         val cardsInfo = DataHelper.getCardsInfoWithEmptyFields();
         val errorNotificationPage = replenishment.shouldReplenishFormToBuyWithError(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();
@@ -72,7 +57,7 @@ public class TestToBuy {
 
     @Test
     void shouldNotSendFormWithSingleSymbols() {
-        val replenishment = open(Localhost.DEV.getUrl(), Replenishment.class);
+        val replenishment = open(DataHelper.Localhost.DEV.getUrl(), Replenishment.class);
         val cardsInfo = DataHelper.getCardsInfoWithSingleSymbols();
         val errorNotificationPage = replenishment.shouldReplenishFormToBuyWithError(cardsInfo);
         errorNotificationPage.shouldErrorNotificationBeVisible();

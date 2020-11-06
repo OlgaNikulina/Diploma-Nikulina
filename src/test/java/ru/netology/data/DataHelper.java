@@ -12,6 +12,21 @@ public class DataHelper {
     private DataHelper() {
     }
 
+    public enum Localhost {
+
+        DEV("http://localhost:8080");
+
+        private final String url;
+
+        Localhost(String url) {
+            this.url = url;
+        }
+
+        public String getUrl() {
+            return url;
+        }
+    }
+
     @Value
     public static class CardsInfo {
         private String cardNumber;
