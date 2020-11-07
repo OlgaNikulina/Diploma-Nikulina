@@ -44,7 +44,6 @@ public class TestToBuy {
         Assertions.assertEquals(DataHelper.shouldSelectPayment_IdFromDBToBuy(), payment_id);
         DataHelper.shouldDeleteFromPayment_entityToBuy();
         DataHelper.shouldDeleteFromOrder_entity();
-
     }
 
     @Test

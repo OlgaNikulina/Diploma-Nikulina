@@ -3,7 +3,6 @@ package ru.netology.data;
 import lombok.Value;
 import lombok.val;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
