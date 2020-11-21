@@ -1,0 +1,109 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "shouldSendFormWithDeclinedCard()",
+    "uid" : "41bccebb35dda64a",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "failed",
+    "time" : {
+      "start" : 1605947708754,
+      "stop" : 1605947733264,
+      "duration" : 24510
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "shouldSendFormWithApprovedCard()",
+    "uid" : "96f05864d52bcdd1",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "failed",
+    "time" : {
+      "start" : 1605947733566,
+      "stop" : 1605947745086,
+      "duration" : 11520
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "shouldNotSendFormWithSingleSymbols()",
+    "uid" : "b762d9bfdd78dbf5",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "failed",
+    "time" : {
+      "start" : 1605947745285,
+      "stop" : 1605947751373,
+      "duration" : 6088
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "shouldNotSendFormWithEmptyFields()",
+    "uid" : "884ecb25691d88c7",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1605947751384,
+      "stop" : 1605947752914,
+      "duration" : 1530
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "shouldSendFormWithDeclinedCard()",
+    "uid" : "bda0e552e25eac14",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "failed",
+    "time" : {
+      "start" : 1605947752931,
+      "stop" : 1605947769865,
+      "duration" : 16934
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "shouldSendFormWithApprovedCard()",
+    "uid" : "52547e06b3b8852b",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "failed",
+    "time" : {
+      "start" : 1605947769873,
+      "stop" : 1605947779881,
+      "duration" : 10008
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "shouldNotSendFormWithSingleSymbols()",
+    "uid" : "2c35b8d15d50bda0",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "failed",
+    "time" : {
+      "start" : 1605947779891,
+      "stop" : 1605947785588,
+      "duration" : 5697
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "shouldNotSendFormWithEmptyFields()",
+    "uid" : "668de78a5c5a5a93",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1605947785595,
+      "stop" : 1605947786698,
+      "duration" : 1103
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  } ]
+}

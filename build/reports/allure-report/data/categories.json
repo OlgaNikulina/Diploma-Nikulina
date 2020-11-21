@@ -1,0 +1,111 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "Element not found {div.notification__title.findBy(exact text 'Ошибка')}\r\nExpected: visible\r\nScreenshot: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605947732480.0.png\r\nPage source: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605947732480.0.html\r\nTimeout: 15 s.\r\nCaused by: Element not found {div.notification__title.findBy(exact text 'Ошибка')}\r\nExpected: exact text 'Ошибка'\r\nScreenshot: null\r\nTimeout: 0 ms.",
+      "children" : [ {
+        "name" : "shouldSendFormWithDeclinedCard()",
+        "uid" : "41bccebb35dda64a",
+        "parentUid" : "e42d5c7a77d70842180aedec8573b9d9",
+        "status" : "failed",
+        "time" : {
+          "start" : 1605947708754,
+          "stop" : 1605947733264,
+          "duration" : 24510
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "e42d5c7a77d70842180aedec8573b9d9"
+    }, {
+      "name" : "expected: <DECLINED> but was: <APPROVED>",
+      "children" : [ {
+        "name" : "shouldSendFormWithApprovedCard()",
+        "uid" : "96f05864d52bcdd1",
+        "parentUid" : "929f106cf114114e4a4315ed2768bf76",
+        "status" : "failed",
+        "time" : {
+          "start" : 1605947733566,
+          "stop" : 1605947745086,
+          "duration" : 11520
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "929f106cf114114e4a4315ed2768bf76"
+    }, {
+      "name" : "Element not found {By.xpath: //*[@type='text' and not(@placeholder)]/parent::span/following-sibling::span}\r\nExpected: visible\r\nScreenshot: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605947750614.1.png\r\nPage source: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605947750614.1.html\r\nTimeout: 4 s.\r\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@type='text' and not(@placeholder)]/parent::span/following-sibling::span\"}",
+      "children" : [ {
+        "name" : "shouldNotSendFormWithSingleSymbols()",
+        "uid" : "b762d9bfdd78dbf5",
+        "parentUid" : "956ac75f054898d23229ca970cdd62c1",
+        "status" : "failed",
+        "time" : {
+          "start" : 1605947745285,
+          "stop" : 1605947751373,
+          "duration" : 6088
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "956ac75f054898d23229ca970cdd62c1"
+    }, {
+      "name" : "Element not found {div.notification__title.findBy(exact text 'Ошибка')}\r\nExpected: visible\r\nScreenshot: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605947769511.2.png\r\nPage source: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605947769511.2.html\r\nTimeout: 15 s.\r\nCaused by: Element not found {div.notification__title.findBy(exact text 'Ошибка')}\r\nExpected: exact text 'Ошибка'\r\nScreenshot: null\r\nTimeout: 0 ms.",
+      "children" : [ {
+        "name" : "shouldSendFormWithDeclinedCard()",
+        "uid" : "bda0e552e25eac14",
+        "parentUid" : "11e01f832018f4eaf9f8e655d603fb70",
+        "status" : "failed",
+        "time" : {
+          "start" : 1605947752931,
+          "stop" : 1605947769865,
+          "duration" : 16934
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "11e01f832018f4eaf9f8e655d603fb70"
+    }, {
+      "name" : "expected: <8424cc1a-5fa6-4a47-9741-5ac95704fe97> but was: <20650ed5-37a9-4648-8132-a173779720ab>",
+      "children" : [ {
+        "name" : "shouldSendFormWithApprovedCard()",
+        "uid" : "52547e06b3b8852b",
+        "parentUid" : "067483bbb262e5eaa5efdd01adc99b53",
+        "status" : "failed",
+        "time" : {
+          "start" : 1605947769873,
+          "stop" : 1605947779881,
+          "duration" : 10008
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "067483bbb262e5eaa5efdd01adc99b53"
+    }, {
+      "name" : "Element not found {By.xpath: //*[@type='text' and not(@placeholder)]/parent::span/following-sibling::span}\r\nExpected: visible\r\nScreenshot: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605947785242.3.png\r\nPage source: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605947785242.3.html\r\nTimeout: 4 s.\r\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@type='text' and not(@placeholder)]/parent::span/following-sibling::span\"}",
+      "children" : [ {
+        "name" : "shouldNotSendFormWithSingleSymbols()",
+        "uid" : "2c35b8d15d50bda0",
+        "parentUid" : "994f6925a1a248b55e0c6529561ac10c",
+        "status" : "failed",
+        "time" : {
+          "start" : 1605947779891,
+          "stop" : 1605947785588,
+          "duration" : 5697
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "994f6925a1a248b55e0c6529561ac10c"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

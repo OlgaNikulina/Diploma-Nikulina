@@ -1,0 +1,81 @@
+[ {
+  "uid" : "96f05864d52bcdd1",
+  "name" : "shouldSendFormWithApprovedCard()",
+  "time" : {
+    "start" : 1605947733566,
+    "stop" : 1605947745086,
+    "duration" : 11520
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "668de78a5c5a5a93",
+  "name" : "shouldNotSendFormWithEmptyFields()",
+  "time" : {
+    "start" : 1605947785595,
+    "stop" : 1605947786698,
+    "duration" : 1103
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bda0e552e25eac14",
+  "name" : "shouldSendFormWithDeclinedCard()",
+  "time" : {
+    "start" : 1605947752931,
+    "stop" : 1605947769865,
+    "duration" : 16934
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "2c35b8d15d50bda0",
+  "name" : "shouldNotSendFormWithSingleSymbols()",
+  "time" : {
+    "start" : 1605947779891,
+    "stop" : 1605947785588,
+    "duration" : 5697
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "52547e06b3b8852b",
+  "name" : "shouldSendFormWithApprovedCard()",
+  "time" : {
+    "start" : 1605947769873,
+    "stop" : 1605947779881,
+    "duration" : 10008
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "41bccebb35dda64a",
+  "name" : "shouldSendFormWithDeclinedCard()",
+  "time" : {
+    "start" : 1605947708754,
+    "stop" : 1605947733264,
+    "duration" : 24510
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "884ecb25691d88c7",
+  "name" : "shouldNotSendFormWithEmptyFields()",
+  "time" : {
+    "start" : 1605947751384,
+    "stop" : 1605947752914,
+    "duration" : 1530
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b762d9bfdd78dbf5",
+  "name" : "shouldNotSendFormWithSingleSymbols()",
+  "time" : {
+    "start" : 1605947745285,
+    "stop" : 1605947751373,
+    "duration" : 6088
+  },
+  "status" : "failed",
+  "severity" : "normal"
+} ]

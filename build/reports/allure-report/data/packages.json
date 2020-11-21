@@ -1,0 +1,121 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "ru.netology.test",
+    "children" : [ {
+      "name" : "TestToBuy",
+      "children" : [ {
+        "name" : "shouldSendFormWithDeclinedCard",
+        "uid" : "41bccebb35dda64a",
+        "parentUid" : "e7e378563854962cf1ee09ec6bf9345c",
+        "status" : "failed",
+        "time" : {
+          "start" : 1605947708754,
+          "stop" : 1605947733264,
+          "duration" : 24510
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "shouldSendFormWithApprovedCard",
+        "uid" : "96f05864d52bcdd1",
+        "parentUid" : "e7e378563854962cf1ee09ec6bf9345c",
+        "status" : "failed",
+        "time" : {
+          "start" : 1605947733566,
+          "stop" : 1605947745086,
+          "duration" : 11520
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "shouldNotSendFormWithSingleSymbols",
+        "uid" : "b762d9bfdd78dbf5",
+        "parentUid" : "e7e378563854962cf1ee09ec6bf9345c",
+        "status" : "failed",
+        "time" : {
+          "start" : 1605947745285,
+          "stop" : 1605947751373,
+          "duration" : 6088
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "shouldNotSendFormWithEmptyFields",
+        "uid" : "884ecb25691d88c7",
+        "parentUid" : "e7e378563854962cf1ee09ec6bf9345c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605947751384,
+          "stop" : 1605947752914,
+          "duration" : 1530
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "e7e378563854962cf1ee09ec6bf9345c"
+    }, {
+      "name" : "TestToBuyInCredit",
+      "children" : [ {
+        "name" : "shouldSendFormWithDeclinedCard",
+        "uid" : "bda0e552e25eac14",
+        "parentUid" : "7fbf041470cd87579f33d2a124cfde3f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1605947752931,
+          "stop" : 1605947769865,
+          "duration" : 16934
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "shouldSendFormWithApprovedCard",
+        "uid" : "52547e06b3b8852b",
+        "parentUid" : "7fbf041470cd87579f33d2a124cfde3f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1605947769873,
+          "stop" : 1605947779881,
+          "duration" : 10008
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "shouldNotSendFormWithSingleSymbols",
+        "uid" : "2c35b8d15d50bda0",
+        "parentUid" : "7fbf041470cd87579f33d2a124cfde3f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1605947779891,
+          "stop" : 1605947785588,
+          "duration" : 5697
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "shouldNotSendFormWithEmptyFields",
+        "uid" : "668de78a5c5a5a93",
+        "parentUid" : "7fbf041470cd87579f33d2a124cfde3f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605947785595,
+          "stop" : 1605947786698,
+          "duration" : 1103
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "7fbf041470cd87579f33d2a124cfde3f"
+    } ],
+    "uid" : "ru.netology.test"
+  } ]
+}

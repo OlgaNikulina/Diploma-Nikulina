@@ -1,0 +1,117 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "ru.netology.test.TestToBuy",
+    "children" : [ {
+      "name" : "shouldSendFormWithDeclinedCard()",
+      "uid" : "41bccebb35dda64a",
+      "parentUid" : "5746874295f6fdedb24b454b1a2e9abf",
+      "status" : "failed",
+      "time" : {
+        "start" : 1605947708754,
+        "stop" : 1605947733264,
+        "duration" : 24510
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "shouldSendFormWithApprovedCard()",
+      "uid" : "96f05864d52bcdd1",
+      "parentUid" : "5746874295f6fdedb24b454b1a2e9abf",
+      "status" : "failed",
+      "time" : {
+        "start" : 1605947733566,
+        "stop" : 1605947745086,
+        "duration" : 11520
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "shouldNotSendFormWithSingleSymbols()",
+      "uid" : "b762d9bfdd78dbf5",
+      "parentUid" : "5746874295f6fdedb24b454b1a2e9abf",
+      "status" : "failed",
+      "time" : {
+        "start" : 1605947745285,
+        "stop" : 1605947751373,
+        "duration" : 6088
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "shouldNotSendFormWithEmptyFields()",
+      "uid" : "884ecb25691d88c7",
+      "parentUid" : "5746874295f6fdedb24b454b1a2e9abf",
+      "status" : "passed",
+      "time" : {
+        "start" : 1605947751384,
+        "stop" : 1605947752914,
+        "duration" : 1530
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "5746874295f6fdedb24b454b1a2e9abf"
+  }, {
+    "name" : "ru.netology.test.TestToBuyInCredit",
+    "children" : [ {
+      "name" : "shouldSendFormWithDeclinedCard()",
+      "uid" : "bda0e552e25eac14",
+      "parentUid" : "3e300a0d5470a3d71d2de30eee2d9f12",
+      "status" : "failed",
+      "time" : {
+        "start" : 1605947752931,
+        "stop" : 1605947769865,
+        "duration" : 16934
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "shouldSendFormWithApprovedCard()",
+      "uid" : "52547e06b3b8852b",
+      "parentUid" : "3e300a0d5470a3d71d2de30eee2d9f12",
+      "status" : "failed",
+      "time" : {
+        "start" : 1605947769873,
+        "stop" : 1605947779881,
+        "duration" : 10008
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "shouldNotSendFormWithSingleSymbols()",
+      "uid" : "2c35b8d15d50bda0",
+      "parentUid" : "3e300a0d5470a3d71d2de30eee2d9f12",
+      "status" : "failed",
+      "time" : {
+        "start" : 1605947779891,
+        "stop" : 1605947785588,
+        "duration" : 5697
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "shouldNotSendFormWithEmptyFields()",
+      "uid" : "668de78a5c5a5a93",
+      "parentUid" : "3e300a0d5470a3d71d2de30eee2d9f12",
+      "status" : "passed",
+      "time" : {
+        "start" : 1605947785595,
+        "stop" : 1605947786698,
+        "duration" : 1103
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "3e300a0d5470a3d71d2de30eee2d9f12"
+  } ]
+}

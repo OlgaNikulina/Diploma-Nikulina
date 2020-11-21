@@ -1,0 +1,272 @@
+{
+  "uid" : "884ecb25691d88c7",
+  "name" : "shouldNotSendFormWithEmptyFields()",
+  "fullName" : "ru.netology.test.TestToBuy.shouldNotSendFormWithEmptyFields",
+  "historyId" : "1c9dd8744a0cc5dabc70acb425f31c17",
+  "time" : {
+    "start" : 1605947751384,
+    "stop" : 1605947752914,
+    "duration" : 1530
+  },
+  "description" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "$(\"open\") http://localhost:8080",
+      "time" : {
+        "start" : 1605947751385,
+        "stop" : 1605947751820,
+        "duration" : 435
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "$(\"span.button__text.findBy(exact text 'Купить')\") click()",
+      "time" : {
+        "start" : 1605947751820,
+        "stop" : 1605947752009,
+        "duration" : 189
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "$(\"[placeholder='0000 0000 0000 0000']\") set value()",
+      "time" : {
+        "start" : 1605947752009,
+        "stop" : 1605947752119,
+        "duration" : 110
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "$(\"[placeholder='08']\") set value()",
+      "time" : {
+        "start" : 1605947752119,
+        "stop" : 1605947752197,
+        "duration" : 78
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "$(\"[placeholder='22']\") set value()",
+      "time" : {
+        "start" : 1605947752197,
+        "stop" : 1605947752268,
+        "duration" : 71
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "$(\"By.xpath: //*[@type='text' and not(@placeholder)]\") set value()",
+      "time" : {
+        "start" : 1605947752268,
+        "stop" : 1605947752360,
+        "duration" : 92
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "$(\"[placeholder='999']\") set value()",
+      "time" : {
+        "start" : 1605947752360,
+        "stop" : 1605947752440,
+        "duration" : 80
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "$(\"span.button__text.findBy(exact text 'Продолжить')\") click()",
+      "time" : {
+        "start" : 1605947752440,
+        "stop" : 1605947752576,
+        "duration" : 136
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "$(\"By.xpath: //*[@placeholder='0000 0000 0000 0000']/parent::span/following-sibling::span\") should be(visible)",
+      "time" : {
+        "start" : 1605947752576,
+        "stop" : 1605947752606,
+        "duration" : 30
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "$(\"By.xpath: //*[@placeholder='08']/parent::span/following-sibling::span\") should be(visible)",
+      "time" : {
+        "start" : 1605947752606,
+        "stop" : 1605947752636,
+        "duration" : 30
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "$(\"By.xpath: //*[@placeholder='22']/parent::span/following-sibling::span\") should be(visible)",
+      "time" : {
+        "start" : 1605947752636,
+        "stop" : 1605947752671,
+        "duration" : 35
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "$(\"By.xpath: //*[@type='text' and not(@placeholder)]/parent::span/following-sibling::span\") should be(visible)",
+      "time" : {
+        "start" : 1605947752671,
+        "stop" : 1605947752706,
+        "duration" : 35
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "$(\"By.xpath: //*[@placeholder='999']/parent::span/following-sibling::span\") should be(visible)",
+      "time" : {
+        "start" : 1605947752707,
+        "stop" : 1605947752753,
+        "duration" : 46
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 13,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "DESKTOP-24456IH"
+  }, {
+    "name" : "thread",
+    "value" : "12228@DESKTOP-24456IH.Test worker(13)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "ru.netology.test.TestToBuy"
+  }, {
+    "name" : "testClass",
+    "value" : "ru.netology.test.TestToBuy"
+  }, {
+    "name" : "testMethod",
+    "value" : "shouldNotSendFormWithEmptyFields"
+  }, {
+    "name" : "suite",
+    "value" : "ru.netology.test.TestToBuy"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "91b0b447df9a84dc",
+      "status" : "broken",
+      "statusDetails" : "java.lang.NullPointerException",
+      "time" : {
+        "start" : 1605947261940,
+        "stop" : 1605947262998,
+        "duration" : 1058
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "884ecb25691d88c7.json",
+  "parameterValues" : [ ]
+}
