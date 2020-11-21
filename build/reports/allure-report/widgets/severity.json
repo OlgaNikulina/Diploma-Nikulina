@@ -1,80 +1,80 @@
 [ {
-  "uid" : "96f05864d52bcdd1",
-  "name" : "shouldSendFormWithApprovedCard()",
+  "uid" : "7e192b0644032816",
+  "name" : "shouldSendFormWithDeclinedCard()",
   "time" : {
-    "start" : 1605947733566,
-    "stop" : 1605947745086,
-    "duration" : 11520
+    "start" : 1605949926724,
+    "stop" : 1605949943505,
+    "duration" : 16781
   },
   "status" : "failed",
   "severity" : "normal"
 }, {
-  "uid" : "668de78a5c5a5a93",
+  "uid" : "75de0998b99df050",
   "name" : "shouldNotSendFormWithEmptyFields()",
   "time" : {
-    "start" : 1605947785595,
-    "stop" : 1605947786698,
-    "duration" : 1103
+    "start" : 1605949925574,
+    "stop" : 1605949926706,
+    "duration" : 1132
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "bda0e552e25eac14",
+  "uid" : "9270de4ebd27fdf",
   "name" : "shouldSendFormWithDeclinedCard()",
   "time" : {
-    "start" : 1605947752931,
-    "stop" : 1605947769865,
-    "duration" : 16934
+    "start" : 1605949884586,
+    "stop" : 1605949911248,
+    "duration" : 26662
   },
   "status" : "failed",
   "severity" : "normal"
 }, {
-  "uid" : "2c35b8d15d50bda0",
-  "name" : "shouldNotSendFormWithSingleSymbols()",
-  "time" : {
-    "start" : 1605947779891,
-    "stop" : 1605947785588,
-    "duration" : 5697
-  },
-  "status" : "failed",
-  "severity" : "normal"
-}, {
-  "uid" : "52547e06b3b8852b",
+  "uid" : "9934871b746843cb",
   "name" : "shouldSendFormWithApprovedCard()",
   "time" : {
-    "start" : 1605947769873,
-    "stop" : 1605947779881,
-    "duration" : 10008
+    "start" : 1605949911542,
+    "stop" : 1605949919224,
+    "duration" : 7682
   },
   "status" : "failed",
   "severity" : "normal"
 }, {
-  "uid" : "41bccebb35dda64a",
-  "name" : "shouldSendFormWithDeclinedCard()",
-  "time" : {
-    "start" : 1605947708754,
-    "stop" : 1605947733264,
-    "duration" : 24510
-  },
-  "status" : "failed",
-  "severity" : "normal"
-}, {
-  "uid" : "884ecb25691d88c7",
+  "uid" : "58fbc6197858e25c",
   "name" : "shouldNotSendFormWithEmptyFields()",
   "time" : {
-    "start" : 1605947751384,
-    "stop" : 1605947752914,
-    "duration" : 1530
+    "start" : 1605949959398,
+    "stop" : 1605949960387,
+    "duration" : 989
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "b762d9bfdd78dbf5",
+  "uid" : "66a1be44b860db7e",
   "name" : "shouldNotSendFormWithSingleSymbols()",
   "time" : {
-    "start" : 1605947745285,
-    "stop" : 1605947751373,
-    "duration" : 6088
+    "start" : 1605949919392,
+    "stop" : 1605949925562,
+    "duration" : 6170
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "786b5aac7d537a55",
+  "name" : "shouldNotSendFormWithSingleSymbols()",
+  "time" : {
+    "start" : 1605949953483,
+    "stop" : 1605949959390,
+    "duration" : 5907
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "81b32c5455bf9fab",
+  "name" : "shouldSendFormWithApprovedCard()",
+  "time" : {
+    "start" : 1605949943514,
+    "stop" : 1605949953474,
+    "duration" : 9960
   },
   "status" : "failed",
   "severity" : "normal"

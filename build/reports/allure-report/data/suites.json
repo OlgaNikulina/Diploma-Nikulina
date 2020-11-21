@@ -5,52 +5,52 @@
     "name" : "ru.netology.test.TestToBuy",
     "children" : [ {
       "name" : "shouldSendFormWithDeclinedCard()",
-      "uid" : "41bccebb35dda64a",
+      "uid" : "9270de4ebd27fdf",
       "parentUid" : "5746874295f6fdedb24b454b1a2e9abf",
       "status" : "failed",
       "time" : {
-        "start" : 1605947708754,
-        "stop" : 1605947733264,
-        "duration" : 24510
+        "start" : 1605949884586,
+        "stop" : 1605949911248,
+        "duration" : 26662
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "shouldSendFormWithApprovedCard()",
-      "uid" : "96f05864d52bcdd1",
+      "uid" : "9934871b746843cb",
       "parentUid" : "5746874295f6fdedb24b454b1a2e9abf",
       "status" : "failed",
       "time" : {
-        "start" : 1605947733566,
-        "stop" : 1605947745086,
-        "duration" : 11520
+        "start" : 1605949911542,
+        "stop" : 1605949919224,
+        "duration" : 7682
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "shouldNotSendFormWithSingleSymbols()",
-      "uid" : "b762d9bfdd78dbf5",
+      "uid" : "66a1be44b860db7e",
       "parentUid" : "5746874295f6fdedb24b454b1a2e9abf",
       "status" : "failed",
       "time" : {
-        "start" : 1605947745285,
-        "stop" : 1605947751373,
-        "duration" : 6088
+        "start" : 1605949919392,
+        "stop" : 1605949925562,
+        "duration" : 6170
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "shouldNotSendFormWithEmptyFields()",
-      "uid" : "884ecb25691d88c7",
+      "uid" : "75de0998b99df050",
       "parentUid" : "5746874295f6fdedb24b454b1a2e9abf",
       "status" : "passed",
       "time" : {
-        "start" : 1605947751384,
-        "stop" : 1605947752914,
-        "duration" : 1530
+        "start" : 1605949925574,
+        "stop" : 1605949926706,
+        "duration" : 1132
       },
       "flaky" : false,
       "newFailed" : false,
@@ -61,52 +61,52 @@
     "name" : "ru.netology.test.TestToBuyInCredit",
     "children" : [ {
       "name" : "shouldSendFormWithDeclinedCard()",
-      "uid" : "bda0e552e25eac14",
+      "uid" : "7e192b0644032816",
       "parentUid" : "3e300a0d5470a3d71d2de30eee2d9f12",
       "status" : "failed",
       "time" : {
-        "start" : 1605947752931,
-        "stop" : 1605947769865,
-        "duration" : 16934
+        "start" : 1605949926724,
+        "stop" : 1605949943505,
+        "duration" : 16781
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "shouldSendFormWithApprovedCard()",
-      "uid" : "52547e06b3b8852b",
+      "uid" : "81b32c5455bf9fab",
       "parentUid" : "3e300a0d5470a3d71d2de30eee2d9f12",
       "status" : "failed",
       "time" : {
-        "start" : 1605947769873,
-        "stop" : 1605947779881,
-        "duration" : 10008
+        "start" : 1605949943514,
+        "stop" : 1605949953474,
+        "duration" : 9960
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "shouldNotSendFormWithSingleSymbols()",
-      "uid" : "2c35b8d15d50bda0",
+      "uid" : "786b5aac7d537a55",
       "parentUid" : "3e300a0d5470a3d71d2de30eee2d9f12",
       "status" : "failed",
       "time" : {
-        "start" : 1605947779891,
-        "stop" : 1605947785588,
-        "duration" : 5697
+        "start" : 1605949953483,
+        "stop" : 1605949959390,
+        "duration" : 5907
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "shouldNotSendFormWithEmptyFields()",
-      "uid" : "668de78a5c5a5a93",
+      "uid" : "58fbc6197858e25c",
       "parentUid" : "3e300a0d5470a3d71d2de30eee2d9f12",
       "status" : "passed",
       "time" : {
-        "start" : 1605947785595,
-        "stop" : 1605947786698,
-        "duration" : 1103
+        "start" : 1605949959398,
+        "stop" : 1605949960387,
+        "duration" : 989
       },
       "flaky" : false,
       "newFailed" : false,

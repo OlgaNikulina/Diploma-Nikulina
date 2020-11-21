@@ -9,33 +9,13 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "bda0e552e25eac14",
+      "uid" : "7e192b0644032816",
       "status" : "failed",
-      "statusDetails" : "Element not found {div.notification__title.findBy(exact text 'Ошибка')}\r\nExpected: visible\r\nScreenshot: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605947769511.2.png\r\nPage source: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605947769511.2.html\r\nTimeout: 15 s.\r\nCaused by: Element not found {div.notification__title.findBy(exact text 'Ошибка')}\r\nExpected: exact text 'Ошибка'\r\nScreenshot: null\r\nTimeout: 0 ms.",
+      "statusDetails" : "Element not found {div.notification__title.findBy(exact text 'Ошибка')}\r\nExpected: visible\r\nScreenshot: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605949943137.2.png\r\nPage source: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605949943137.2.html\r\nTimeout: 15 s.\r\nCaused by: Element not found {div.notification__title.findBy(exact text 'Ошибка')}\r\nExpected: exact text 'Ошибка'\r\nScreenshot: null\r\nTimeout: 0 ms.",
       "time" : {
-        "start" : 1605947752931,
-        "stop" : 1605947769865,
-        "duration" : 16934
-      }
-    } ]
-  },
-  "3476c7611f1c19200129f9ebe844a772" : {
-    "statistic" : {
-      "failed" : 1,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "b762d9bfdd78dbf5",
-      "status" : "failed",
-      "statusDetails" : "Element not found {By.xpath: //*[@type='text' and not(@placeholder)]/parent::span/following-sibling::span}\r\nExpected: visible\r\nScreenshot: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605947750614.1.png\r\nPage source: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605947750614.1.html\r\nTimeout: 4 s.\r\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@type='text' and not(@placeholder)]/parent::span/following-sibling::span\"}",
-      "time" : {
-        "start" : 1605947745285,
-        "stop" : 1605947751373,
-        "duration" : 6088
+        "start" : 1605949926724,
+        "stop" : 1605949943505,
+        "duration" : 16781
       }
     } ]
   },
@@ -49,13 +29,33 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "52547e06b3b8852b",
+      "uid" : "81b32c5455bf9fab",
       "status" : "failed",
-      "statusDetails" : "expected: <8424cc1a-5fa6-4a47-9741-5ac95704fe97> but was: <20650ed5-37a9-4648-8132-a173779720ab>",
+      "statusDetails" : "expected: <DECLINED> but was: <APPROVED>",
       "time" : {
-        "start" : 1605947769873,
-        "stop" : 1605947779881,
-        "duration" : 10008
+        "start" : 1605949943514,
+        "stop" : 1605949953474,
+        "duration" : 9960
+      }
+    } ]
+  },
+  "3476c7611f1c19200129f9ebe844a772" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "66a1be44b860db7e",
+      "status" : "failed",
+      "statusDetails" : "Element not found {By.xpath: //*[@type='text' and not(@placeholder)]/parent::span/following-sibling::span}\r\nExpected: visible\r\nScreenshot: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605949924878.1.png\r\nPage source: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605949924878.1.html\r\nTimeout: 4 s.\r\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@type='text' and not(@placeholder)]/parent::span/following-sibling::span\"}",
+      "time" : {
+        "start" : 1605949919392,
+        "stop" : 1605949925562,
+        "duration" : 6170
       }
     } ]
   },
@@ -69,12 +69,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "668de78a5c5a5a93",
+      "uid" : "58fbc6197858e25c",
       "status" : "passed",
       "time" : {
-        "start" : 1605947785595,
-        "stop" : 1605947786698,
-        "duration" : 1103
+        "start" : 1605949959398,
+        "stop" : 1605949960387,
+        "duration" : 989
       }
     } ]
   },
@@ -88,32 +88,13 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "41bccebb35dda64a",
+      "uid" : "9270de4ebd27fdf",
       "status" : "failed",
-      "statusDetails" : "Element not found {div.notification__title.findBy(exact text 'Ошибка')}\r\nExpected: visible\r\nScreenshot: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605947732480.0.png\r\nPage source: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605947732480.0.html\r\nTimeout: 15 s.\r\nCaused by: Element not found {div.notification__title.findBy(exact text 'Ошибка')}\r\nExpected: exact text 'Ошибка'\r\nScreenshot: null\r\nTimeout: 0 ms.",
+      "statusDetails" : "Element not found {div.notification__title.findBy(exact text 'Ошибка')}\r\nExpected: visible\r\nScreenshot: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605949910443.0.png\r\nPage source: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605949910443.0.html\r\nTimeout: 15 s.\r\nCaused by: Element not found {div.notification__title.findBy(exact text 'Ошибка')}\r\nExpected: exact text 'Ошибка'\r\nScreenshot: null\r\nTimeout: 0 ms.",
       "time" : {
-        "start" : 1605947708754,
-        "stop" : 1605947733264,
-        "duration" : 24510
-      }
-    } ]
-  },
-  "1c9dd8744a0cc5dabc70acb425f31c17" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "884ecb25691d88c7",
-      "status" : "passed",
-      "time" : {
-        "start" : 1605947751384,
-        "stop" : 1605947752914,
-        "duration" : 1530
+        "start" : 1605949884586,
+        "stop" : 1605949911248,
+        "duration" : 26662
       }
     } ]
   },
@@ -127,13 +108,32 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "2c35b8d15d50bda0",
+      "uid" : "786b5aac7d537a55",
       "status" : "failed",
-      "statusDetails" : "Element not found {By.xpath: //*[@type='text' and not(@placeholder)]/parent::span/following-sibling::span}\r\nExpected: visible\r\nScreenshot: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605947785242.3.png\r\nPage source: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605947785242.3.html\r\nTimeout: 4 s.\r\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@type='text' and not(@placeholder)]/parent::span/following-sibling::span\"}",
+      "statusDetails" : "Element not found {By.xpath: //*[@type='text' and not(@placeholder)]/parent::span/following-sibling::span}\r\nExpected: visible\r\nScreenshot: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605949959011.3.png\r\nPage source: file:/C:/Users/Pepper/IdeaProjects/diplomNikulina/build/reports/tests/1605949959011.3.html\r\nTimeout: 4 s.\r\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@type='text' and not(@placeholder)]/parent::span/following-sibling::span\"}",
       "time" : {
-        "start" : 1605947779891,
-        "stop" : 1605947785588,
-        "duration" : 5697
+        "start" : 1605949953483,
+        "stop" : 1605949959390,
+        "duration" : 5907
+      }
+    } ]
+  },
+  "1c9dd8744a0cc5dabc70acb425f31c17" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "75de0998b99df050",
+      "status" : "passed",
+      "time" : {
+        "start" : 1605949925574,
+        "stop" : 1605949926706,
+        "duration" : 1132
       }
     } ]
   },
@@ -147,13 +147,13 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "96f05864d52bcdd1",
+      "uid" : "9934871b746843cb",
       "status" : "failed",
       "statusDetails" : "expected: <DECLINED> but was: <APPROVED>",
       "time" : {
-        "start" : 1605947733566,
-        "stop" : 1605947745086,
-        "duration" : 11520
+        "start" : 1605949911542,
+        "stop" : 1605949919224,
+        "duration" : 7682
       }
     } ]
   }
